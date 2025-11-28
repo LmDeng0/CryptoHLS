@@ -1,0 +1,172 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4'
+================================================================
+* Date:           Thu Nov  6 13:35:41 2025
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        tmp_hls_smoke_debug
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.225 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |              Loop Name              |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_170_3_VITIS_LOOP_171_4  |       16|       16|         2|          1|          1|    16|       yes|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.22>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 5 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%indvar_flatten10 = alloca i32 1"   --->   Operation 7 'alloca' 'indvar_flatten10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %ciphertext, void @empty_7, i32 0, i32 0, void @empty_8, i32 4294967295, i32 0, void @empty_8, void @empty_8, void @empty_8, i32 0, i32 0, i32 0, i32 0, void @empty_8, void @empty_8"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.38ns)   --->   "%store_ln0 = store i5 0, i5 %indvar_flatten10"   --->   Operation 9 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 10 [1/1] (0.38ns)   --->   "%store_ln0 = store i3 0, i3 %i"   --->   Operation 10 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 11 [1/1] (0.38ns)   --->   "%store_ln0 = store i3 0, i3 %j"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%indvar_flatten10_load = load i5 %indvar_flatten10" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 13 'load' 'indvar_flatten10_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 14 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.63ns)   --->   "%icmp_ln170 = icmp_eq  i5 %indvar_flatten10_load, i5 16" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 15 'icmp' 'icmp_ln170' <Predicate = true> <Delay = 0.63> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.70ns)   --->   "%add_ln170_1 = add i5 %indvar_flatten10_load, i5 1" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 16 'add' 'add_ln170_1' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln170 = br i1 %icmp_ln170, void %.split2, void %.exitStub" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 17 'br' 'br_ln170' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%j_load = load i3 %j" [/home/CryptoHLS/test/aes_raw.cpp:171]   --->   Operation 18 'load' 'j_load' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%i_load = load i3 %i" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 19 'load' 'i_load' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.57ns)   --->   "%add_ln170 = add i3 %i_load, i3 1" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 20 'add' 'add_ln170' <Predicate = (!icmp_ln170)> <Delay = 0.57> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [1/1] (0.49ns)   --->   "%icmp_ln171 = icmp_eq  i3 %j_load, i3 4" [/home/CryptoHLS/test/aes_raw.cpp:171]   --->   Operation 21 'icmp' 'icmp_ln171' <Predicate = (!icmp_ln170)> <Delay = 0.49> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.27ns)   --->   "%select_ln170 = select i1 %icmp_ln171, i3 0, i3 %j_load" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 22 'select' 'select_ln170' <Predicate = (!icmp_ln170)> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.27ns)   --->   "%select_ln170_1 = select i1 %icmp_ln171, i3 %add_ln170, i3 %i_load" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 23 'select' 'select_ln170_1' <Predicate = (!icmp_ln170)> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln170 = zext i3 %select_ln170_1" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 24 'zext' 'zext_ln170' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%trunc_ln170 = trunc i3 %select_ln170_1" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 25 'trunc' 'trunc_ln170' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_mid = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %trunc_ln170, i2 0" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 26 'bitconcatenate' 'p_mid' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%trunc_ln172 = trunc i3 %select_ln170" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 27 'trunc' 'trunc_ln172' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_25_cast = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %trunc_ln172, i2 0" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 28 'bitconcatenate' 'tmp_25_cast' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.70ns)   --->   "%add_ln172_1 = add i4 %tmp_25_cast, i4 %zext_ln170" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 29 'add' 'add_ln172_1' <Predicate = (!icmp_ln170)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%zext_ln172_1 = zext i4 %add_ln172_1" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 30 'zext' 'zext_ln172_1' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%state_addr = getelementptr i8 %state, i64 0, i64 %zext_ln172_1" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 31 'getelementptr' 'state_addr' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%j_3_cast = zext i3 %select_ln170" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 32 'zext' 'j_3_cast' <Predicate = (!icmp_ln170)> <Delay = 0.00>
+ST_1 : Operation 33 [2/2] (0.66ns)   --->   "%state_load = load i4 %state_addr" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 33 'load' 'state_load' <Predicate = (!icmp_ln170)> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_1 : Operation 34 [1/1] (0.70ns)   --->   "%add_ln172 = add i4 %j_3_cast, i4 %p_mid" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 34 'add' 'add_ln172' <Predicate = (!icmp_ln170)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 35 [1/1] (0.57ns)   --->   "%add_ln171 = add i3 %select_ln170, i3 1" [/home/CryptoHLS/test/aes_raw.cpp:171]   --->   Operation 35 'add' 'add_ln171' <Predicate = (!icmp_ln170)> <Delay = 0.57> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [1/1] (0.38ns)   --->   "%store_ln170 = store i5 %add_ln170_1, i5 %indvar_flatten10" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 36 'store' 'store_ln170' <Predicate = (!icmp_ln170)> <Delay = 0.38>
+ST_1 : Operation 37 [1/1] (0.38ns)   --->   "%store_ln170 = store i3 %select_ln170_1, i3 %i" [/home/CryptoHLS/test/aes_raw.cpp:170]   --->   Operation 37 'store' 'store_ln170' <Predicate = (!icmp_ln170)> <Delay = 0.38>
+ST_1 : Operation 38 [1/1] (0.38ns)   --->   "%store_ln171 = store i3 %add_ln171, i3 %j" [/home/CryptoHLS/test/aes_raw.cpp:171]   --->   Operation 38 'store' 'store_ln171' <Predicate = (!icmp_ln170)> <Delay = 0.38>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 48 'ret' 'ret_ln0' <Predicate = (icmp_ln170)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.33>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_170_3_VITIS_LOOP_171_4_str"   --->   Operation 39 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16"   --->   Operation 40 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 41 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%specloopname_ln171 = specloopname void @_ssdm_op_SpecLoopName, void @empty_6" [/home/CryptoHLS/test/aes_raw.cpp:171]   --->   Operation 42 'specloopname' 'specloopname_ln171' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/2] (0.66ns)   --->   "%state_load = load i4 %state_addr" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 43 'load' 'state_load' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%zext_ln172 = zext i4 %add_ln172" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 44 'zext' 'zext_ln172' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%ciphertext_addr = getelementptr i8 %ciphertext, i64 0, i64 %zext_ln172" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 45 'getelementptr' 'ciphertext_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.66ns)   --->   "%store_ln172 = store i8 %state_load, i4 %ciphertext_addr" [/home/CryptoHLS/test/aes_raw.cpp:172]   --->   Operation 46 'store' 'store_ln172' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 47 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.22ns
+The critical path consists of the following:
+	'alloca' operation ('i') [4]  (0 ns)
+	'load' operation ('i_load', /home/CryptoHLS/test/aes_raw.cpp:170) on local variable 'i' [19]  (0 ns)
+	'add' operation ('add_ln170', /home/CryptoHLS/test/aes_raw.cpp:170) [20]  (0.572 ns)
+	'select' operation ('select_ln170_1', /home/CryptoHLS/test/aes_raw.cpp:170) [25]  (0.278 ns)
+	'add' operation ('add_ln172_1', /home/CryptoHLS/test/aes_raw.cpp:172) [32]  (0.708 ns)
+	'getelementptr' operation ('state_addr', /home/CryptoHLS/test/aes_raw.cpp:172) [34]  (0 ns)
+	'load' operation ('state_load', /home/CryptoHLS/test/aes_raw.cpp:172) on array 'state' [37]  (0.667 ns)
+
+ <State 2>: 1.33ns
+The critical path consists of the following:
+	'load' operation ('state_load', /home/CryptoHLS/test/aes_raw.cpp:172) on array 'state' [37]  (0.667 ns)
+	'store' operation ('store_ln172', /home/CryptoHLS/test/aes_raw.cpp:172) of variable 'state_load', /home/CryptoHLS/test/aes_raw.cpp:172 on array 'ciphertext' [41]  (0.667 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

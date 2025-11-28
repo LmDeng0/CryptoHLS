@@ -1,0 +1,1114 @@
+<profile>
+    <ReportVersion>
+        <Version>2021.1</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>virtexuplus</ProductFamily>
+        <Part>xcvu9p-flga2104-2L-e</Part>
+        <TopModelName>aes_encrypt</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>531</Best-caseLatency>
+            <Average-caseLatency>531</Average-caseLatency>
+            <Worst-caseLatency>531</Worst-caseLatency>
+            <Best-caseRealTimeLatency>5.310 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>5.310 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>5.310 us</Worst-caseRealTimeLatency>
+            <Interval-min>532</Interval-min>
+            <Interval-max>532</Interval-max>
+        </SummaryOfOverallLatency>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>0</BRAM_18K>
+            <FF>651</FF>
+            <LUT>3656</LUT>
+            <URAM>0</URAM>
+            <DSP>0</DSP>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>4320</BRAM_18K>
+            <DSP>6840</DSP>
+            <FF>2364480</FF>
+            <LUT>1182240</LUT>
+            <URAM>960</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>aes_encrypt</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst</name>
+            <Object>aes_encrypt</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>aes_encrypt</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>aes_encrypt</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>aes_encrypt</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>aes_encrypt</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_address0</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_ce0</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_q0</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>8</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_address1</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_ce1</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>key_q1</name>
+            <Object>key</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>8</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>plaintext_address0</name>
+            <Object>plaintext</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>plaintext_ce0</name>
+            <Object>plaintext</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>plaintext_q0</name>
+            <Object>plaintext</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>8</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ciphertext_address0</name>
+            <Object>ciphertext</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ciphertext_ce0</name>
+            <Object>ciphertext</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ciphertext_we0</name>
+            <Object>ciphertext</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ciphertext_d0</name>
+            <Object>ciphertext</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="4">
+            <ModuleName>aes_encrypt</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_aes_encrypt_Pipeline_VITIS_LOOP_41_1_fu_46</InstName>
+                    <ModuleName>aes_encrypt_Pipeline_VITIS_LOOP_41_1</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>46</ID>
+                    <BindInstances>add_ln41_fu_148_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2_fu_54</InstName>
+                    <ModuleName>aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>54</ID>
+                    <BindInstances>add_ln160_1_fu_111_p2 add_ln160_fu_123_p2 add_ln162_1_fu_179_p2 add_ln162_fu_189_p2 add_ln161_fu_200_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_aes_encrypt_Pipeline_VITIS_LOOP_47_2_fu_62</InstName>
+                    <ModuleName>aes_encrypt_Pipeline_VITIS_LOOP_47_2</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>62</ID>
+                    <BindInstances>k_fu_238_p2 m_fu_326_p2 i_2_fu_285_p2 Rcon_U</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_cipher_fu_71</InstName>
+                    <ModuleName>cipher</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>71</ID>
+                    <InstancesList>
+                        <Instance>
+                            <InstName>grp_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2_fu_159</InstName>
+                            <ModuleName>cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>159</ID>
+                            <BindInstances>add_ln77_2_fu_108_p2 add_ln77_fu_120_p2 add_ln79_fu_164_p2 add_ln78_fu_176_p2</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_cipher_Pipeline_VITIS_LOOP_136_1_fu_167</InstName>
+                            <ModuleName>cipher_Pipeline_VITIS_LOOP_136_1</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>167</ID>
+                            <BindInstances>add_ln136_fu_631_p2 sbox_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2_fu_177</InstName>
+                            <ModuleName>cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>177</ID>
+                            <BindInstances>add_ln85_1_fu_109_p2 add_ln85_fu_121_p2 add_ln87_fu_165_p2 add_ln86_fu_176_p2 sbox_U</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>grp_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22_fu_185</InstName>
+                            <ModuleName>cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>185</ID>
+                            <BindInstances>add_ln77_fu_112_p2 add_ln77_1_fu_124_p2 add_ln79_fu_172_p2 add_ln79_1_fu_191_p2 add_ln78_fu_202_p2</BindInstances>
+                        </Instance>
+                    </InstancesList>
+                </Instance>
+                <Instance>
+                    <InstName>grp_aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4_fu_79</InstName>
+                    <ModuleName>aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>79</ID>
+                    <BindInstances>add_ln170_1_fu_111_p2 add_ln170_fu_123_p2 add_ln172_1_fu_179_p2 add_ln172_fu_194_p2 add_ln171_fu_200_p2</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>RoundKey_U state_U sbox_U</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>aes_encrypt_Pipeline_VITIS_LOOP_41_1</Name>
+            <Loops>
+                <VITIS_LOOP_41_1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>1.293</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>10</Best-caseLatency>
+                    <Average-caseLatency>10</Average-caseLatency>
+                    <Worst-caseLatency>10</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.100 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.100 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.100 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>10</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_41_1>
+                        <Name>VITIS_LOOP_41_1</Name>
+                        <TripCount>4</TripCount>
+                        <Latency>8</Latency>
+                        <AbsoluteTimeLatency>80.000 ns</AbsoluteTimeLatency>
+                        <PipelineII>2</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_41_1>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>19</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>157</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_41_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln41_fu_148_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:41" URAM="0" VARIABLE="add_ln41"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>aes_encrypt_Pipeline_VITIS_LOOP_47_2</Name>
+            <Loops>
+                <VITIS_LOOP_47_2/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>1.555</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>242</Best-caseLatency>
+                    <Average-caseLatency>242</Average-caseLatency>
+                    <Worst-caseLatency>242</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.420 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.420 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.420 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>242</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_47_2>
+                        <Name>VITIS_LOOP_47_2</Name>
+                        <TripCount>40</TripCount>
+                        <Latency>240</Latency>
+                        <AbsoluteTimeLatency>2.400 us</AbsoluteTimeLatency>
+                        <PipelineII>6</PipelineII>
+                        <PipelineDepth>6</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_47_2>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>112</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>415</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_47_2" OPTYPE="add" PRAGMA="" RTLNAME="k_fu_238_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:48" URAM="0" VARIABLE="k"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_47_2" OPTYPE="add" PRAGMA="" RTLNAME="m_fu_326_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:68" URAM="0" VARIABLE="m"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_47_2" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_285_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:47" URAM="0" VARIABLE="i_2"/>
+                <BindNode BINDTYPE="storage" BRAM="0" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="Rcon_U" SOURCE="" URAM="0" VARIABLE="Rcon"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2</Name>
+            <Loops>
+                <VITIS_LOOP_160_1_VITIS_LOOP_161_2/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_160_1_VITIS_LOOP_161_2>
+                        <Name>VITIS_LOOP_160_1_VITIS_LOOP_161_2</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_160_1_VITIS_LOOP_161_2>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>18</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>155</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_160_1_VITIS_LOOP_161_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln160_1_fu_111_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:160" URAM="0" VARIABLE="add_ln160_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_160_1_VITIS_LOOP_161_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln160_fu_123_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:160" URAM="0" VARIABLE="add_ln160"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_160_1_VITIS_LOOP_161_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln162_1_fu_179_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:162" URAM="0" VARIABLE="add_ln162_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_160_1_VITIS_LOOP_161_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln162_fu_189_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:162" URAM="0" VARIABLE="add_ln162"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_160_1_VITIS_LOOP_161_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln161_fu_200_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:161" URAM="0" VARIABLE="add_ln161"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2</Name>
+            <Loops>
+                <VITIS_LOOP_77_1_VITIS_LOOP_78_2/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_77_1_VITIS_LOOP_78_2>
+                        <Name>VITIS_LOOP_77_1_VITIS_LOOP_78_2</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_77_1_VITIS_LOOP_78_2>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>18</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>151</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln77_2_fu_108_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:77" URAM="0" VARIABLE="add_ln77_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln77_fu_120_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:77" URAM="0" VARIABLE="add_ln77"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln79_fu_164_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:79" URAM="0" VARIABLE="add_ln79"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln78_fu_176_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:78" URAM="0" VARIABLE="add_ln78"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cipher_Pipeline_VITIS_LOOP_136_1</Name>
+            <Loops>
+                <VITIS_LOOP_136_1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.042</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>173</Best-caseLatency>
+                    <Average-caseLatency>173</Average-caseLatency>
+                    <Worst-caseLatency>173</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.730 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.730 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.730 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>173</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_136_1>
+                        <Name>VITIS_LOOP_136_1</Name>
+                        <TripCount>9</TripCount>
+                        <Latency>171</Latency>
+                        <AbsoluteTimeLatency>1.710 us</AbsoluteTimeLatency>
+                        <PipelineII>19</PipelineII>
+                        <PipelineDepth>19</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_136_1>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>292</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1436</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_136_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln136_fu_631_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:136" URAM="0" VARIABLE="add_ln136"/>
+                <BindNode BINDTYPE="storage" BRAM="0" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="sbox_U" SOURCE="" URAM="0" VARIABLE="sbox"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2</Name>
+            <Loops>
+                <VITIS_LOOP_85_1_VITIS_LOOP_86_2/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>19</Best-caseLatency>
+                    <Average-caseLatency>19</Average-caseLatency>
+                    <Worst-caseLatency>19</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.190 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.190 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.190 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>19</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_85_1_VITIS_LOOP_86_2>
+                        <Name>VITIS_LOOP_85_1_VITIS_LOOP_86_2</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>17</Latency>
+                        <AbsoluteTimeLatency>0.170 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_85_1_VITIS_LOOP_86_2>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>32</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>176</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_85_1_VITIS_LOOP_86_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln85_1_fu_109_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:85" URAM="0" VARIABLE="add_ln85_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_85_1_VITIS_LOOP_86_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln85_fu_121_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:85" URAM="0" VARIABLE="add_ln85"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_85_1_VITIS_LOOP_86_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln87_fu_165_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:87" URAM="0" VARIABLE="add_ln87"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_85_1_VITIS_LOOP_86_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln86_fu_176_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:86" URAM="0" VARIABLE="add_ln86"/>
+                <BindNode BINDTYPE="storage" BRAM="0" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="sbox_U" SOURCE="" URAM="0" VARIABLE="sbox"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22</Name>
+            <Loops>
+                <VITIS_LOOP_77_1_VITIS_LOOP_78_2/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_77_1_VITIS_LOOP_78_2>
+                        <Name>VITIS_LOOP_77_1_VITIS_LOOP_78_2</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_77_1_VITIS_LOOP_78_2>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>18</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>166</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln77_fu_112_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:77" URAM="0" VARIABLE="add_ln77"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln77_1_fu_124_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:77" URAM="0" VARIABLE="add_ln77_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln79_fu_172_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:79" URAM="0" VARIABLE="add_ln79"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln79_1_fu_191_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:79" URAM="0" VARIABLE="add_ln79_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_77_1_VITIS_LOOP_78_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln78_fu_202_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:78" URAM="0" VARIABLE="add_ln78"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cipher</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>246</Best-caseLatency>
+                    <Average-caseLatency>246</Average-caseLatency>
+                    <Worst-caseLatency>246</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.460 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.460 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.460 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>246</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>447</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>2403</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+        </Module>
+        <Module>
+            <Name>aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4</Name>
+            <Loops>
+                <VITIS_LOOP_170_3_VITIS_LOOP_171_4/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>18</Best-caseLatency>
+                    <Average-caseLatency>18</Average-caseLatency>
+                    <Worst-caseLatency>18</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>18</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_170_3_VITIS_LOOP_171_4>
+                        <Name>VITIS_LOOP_170_3_VITIS_LOOP_171_4</Name>
+                        <TripCount>16</TripCount>
+                        <Latency>16</Latency>
+                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                    </VITIS_LOOP_170_3_VITIS_LOOP_171_4>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>18</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>155</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_170_3_VITIS_LOOP_171_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln170_1_fu_111_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:170" URAM="0" VARIABLE="add_ln170_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_170_3_VITIS_LOOP_171_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln170_fu_123_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:170" URAM="0" VARIABLE="add_ln170"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_170_3_VITIS_LOOP_171_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln172_1_fu_179_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:172" URAM="0" VARIABLE="add_ln172_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_170_3_VITIS_LOOP_171_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln172_fu_194_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:172" URAM="0" VARIABLE="add_ln172"/>
+                <BindNode BINDTYPE="op" BRAM="0" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_170_3_VITIS_LOOP_171_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln171_fu_200_p2" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:171" URAM="0" VARIABLE="add_ln171"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>aes_encrypt</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.225</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>531</Best-caseLatency>
+                    <Average-caseLatency>531</Average-caseLatency>
+                    <Worst-caseLatency>531</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>5.310 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>5.310 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>5.310 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>532</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>651</FF>
+                    <AVAIL_FF>2364480</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>3656</LUT>
+                    <AVAIL_LUT>1182240</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>6840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="0" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="RoundKey_U" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:153" URAM="0" VARIABLE="RoundKey"/>
+                <BindNode BINDTYPE="storage" BRAM="0" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="state_U" SOURCE="/home/CryptoHLS/test/aes_raw.cpp:154" URAM="0" VARIABLE="state"/>
+                <BindNode BINDTYPE="storage" BRAM="0" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="sbox_U" SOURCE="" URAM="0" VARIABLE="sbox"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands/>
+    <Args>
+        <Arg ArgName="key" index="0" direction="in" srcType="unsigned char*" srcSize="8">
+            <hwRefs>
+                <hwRef type="port" interface="key_address0" name="key_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="key_ce0" name="key_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="key_q0" name="key_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="key_address1" name="key_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="key_ce1" name="key_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="key_q1" name="key_q1" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="plaintext" index="1" direction="in" srcType="unsigned char*" srcSize="8">
+            <hwRefs>
+                <hwRef type="port" interface="plaintext_address0" name="plaintext_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="plaintext_ce0" name="plaintext_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="plaintext_q0" name="plaintext_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="ciphertext" index="2" direction="out" srcType="unsigned char*" srcSize="8">
+            <hwRefs>
+                <hwRef type="port" interface="ciphertext_address0" name="ciphertext_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="ciphertext_ce0" name="ciphertext_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="ciphertext_we0" name="ciphertext_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="ciphertext_d0" name="ciphertext_d0" usage="data" direction="out"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="key_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="4">
+            <portMaps>
+                <portMap portMapName="key_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>key_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="key"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="key_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="key_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>key_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="key"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="key_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="4">
+            <portMaps>
+                <portMap portMapName="key_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>key_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="key"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="key_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="key_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>key_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="key"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="plaintext_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="4">
+            <portMaps>
+                <portMap portMapName="plaintext_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>plaintext_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="plaintext"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="plaintext_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="plaintext_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>plaintext_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="plaintext"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="ciphertext_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="4">
+            <portMaps>
+                <portMap portMapName="ciphertext_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>ciphertext_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="ciphertext"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="ciphertext_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="ciphertext_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>ciphertext_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="ciphertext"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="AP_MEMORY">
+                <table isCollapsed="0">
+                    <keys size="2">Interface, Bitwidth</keys>
+                    <column name="ciphertext_address0">4</column>
+                    <column name="ciphertext_d0">8</column>
+                    <column name="key_address0">4</column>
+                    <column name="key_address1">4</column>
+                    <column name="key_q0">8</column>
+                    <column name="key_q1">8</column>
+                    <column name="plaintext_address0">4</column>
+                    <column name="plaintext_q0">8</column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table isCollapsed="0">
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst">reset, ap_rst</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start</column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="key">in, unsigned char*</column>
+                    <column name="plaintext">in, unsigned char*</column>
+                    <column name="ciphertext">out, unsigned char*</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table isCollapsed="1">
+                    <keys size="4">Argument, HW Name, HW Type, HW Usage</keys>
+                    <column name="key">key_address0, port, offset</column>
+                    <column name="key">key_ce0, port, </column>
+                    <column name="key">key_q0, port, </column>
+                    <column name="key">key_address1, port, offset</column>
+                    <column name="key">key_ce1, port, </column>
+                    <column name="key">key_q1, port, </column>
+                    <column name="plaintext">plaintext_address0, port, offset</column>
+                    <column name="plaintext">plaintext_ce0, port, </column>
+                    <column name="plaintext">plaintext_q0, port, </column>
+                    <column name="ciphertext">ciphertext_address0, port, offset</column>
+                    <column name="ciphertext">ciphertext_ce0, port, </column>
+                    <column name="ciphertext">ciphertext_we0, port, </column>
+                    <column name="ciphertext">ciphertext_d0, port, </column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0"/>
+    </ReportBurst>
+</profile>
+

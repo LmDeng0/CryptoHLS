@@ -1,0 +1,268 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_encrypt_Pipeline_VITIS_LOOP_47_2'
+================================================================
+* Date:           Fri Aug 29 16:37:43 2025
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        hls_eval
+* Solution:       sol1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  1.555 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      242|      242|  2.420 us|  2.420 us|  242|  242|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_47_2  |      240|      240|         6|          6|          1|    40|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 6, depth = 6
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 1
+  Pipeline-0 : II = 6, D = 6, States = { 1 2 3 4 5 6 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.33>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 9 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.38ns)   --->   "%store_ln0 = store i6 4, i6 %i"   --->   Operation 10 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.preheader"   --->   Operation 11 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%i_1 = load i6 %i"   --->   Operation 12 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 13 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.61ns)   --->   "%icmp_ln47 = icmp_eq  i6 %i_1, i6 44" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:47]   --->   Operation 14 'icmp' 'icmp_ln47' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 40, i64 40, i64 40"   --->   Operation 15 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln47 = br i1 %icmp_ln47, void %.split8_ifconv, void %_Z12KeyExpansionPhPKh.exit.preheader.preheader.exitStub" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:47]   --->   Operation 16 'br' 'br_ln47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%shl_ln1 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i6.i2, i6 %i_1, i2 0" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:48]   --->   Operation 17 'bitconcatenate' 'shl_ln1' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.70ns)   --->   "%k = add i8 %shl_ln1, i8 252" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:48]   --->   Operation 18 'add' 'k' <Predicate = (!icmp_ln47)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%zext_ln49 = zext i8 %k" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:49]   --->   Operation 19 'zext' 'zext_ln49' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%RoundKey_addr_6 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln49" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:49]   --->   Operation 20 'getelementptr' 'RoundKey_addr_6' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 21 [2/2] (0.62ns)   --->   "%tempa_13 = load i8 %RoundKey_addr_6" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:49]   --->   Operation 21 'load' 'tempa_13' <Predicate = (!icmp_ln47)> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%or_ln50 = or i8 %k, i8 1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:50]   --->   Operation 22 'or' 'or_ln50' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln50 = zext i8 %or_ln50" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:50]   --->   Operation 23 'zext' 'zext_ln50' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%RoundKey_addr_7 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln50" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:50]   --->   Operation 24 'getelementptr' 'RoundKey_addr_7' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 25 [2/2] (0.62ns)   --->   "%tempa_2 = load i8 %RoundKey_addr_7" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:50]   --->   Operation 25 'load' 'tempa_2' <Predicate = (!icmp_ln47)> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%empty_17 = trunc i6 %i_1"   --->   Operation 26 'trunc' 'empty_17' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.34ns)   --->   "%icmp_ln54 = icmp_eq  i2 %empty_17, i2 0" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:54]   --->   Operation 27 'icmp' 'icmp_ln54' <Predicate = (!icmp_ln47)> <Delay = 0.34> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%div_i_udiv = partselect i4 @_ssdm_op_PartSelect.i4.i6.i32.i32, i6 %i_1, i32 2, i32 5"   --->   Operation 28 'partselect' 'div_i_udiv' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%zext_ln66 = zext i4 %div_i_udiv" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:66]   --->   Operation 29 'zext' 'zext_ln66' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%Rcon_addr = getelementptr i8 %Rcon, i64 0, i64 %zext_ln66" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:66]   --->   Operation 30 'getelementptr' 'Rcon_addr' <Predicate = (!icmp_ln47)> <Delay = 0.00>
+ST_1 : Operation 31 [2/2] (0.66ns)   --->   "%Rcon_load = load i4 %Rcon_addr" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:66]   --->   Operation 31 'load' 'Rcon_load' <Predicate = (!icmp_ln47)> <Delay = 0.66> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 11> <ROM>
+ST_1 : Operation 32 [1/1] (0.70ns)   --->   "%i_2 = add i6 %i_1, i6 1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:47]   --->   Operation 32 'add' 'i_2' <Predicate = (!icmp_ln47)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (0.38ns)   --->   "%store_ln47 = store i6 %i_2, i6 %i" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:47]   --->   Operation 33 'store' 'store_ln47' <Predicate = (!icmp_ln47)> <Delay = 0.38>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 109 'ret' 'ret_ln0' <Predicate = (icmp_ln47)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.25>
+ST_2 : Operation 34 [1/2] (0.62ns)   --->   "%tempa_13 = load i8 %RoundKey_addr_6" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:49]   --->   Operation 34 'load' 'tempa_13' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_2 : Operation 35 [1/2] (0.62ns)   --->   "%tempa_2 = load i8 %RoundKey_addr_7" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:50]   --->   Operation 35 'load' 'tempa_2' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%or_ln51 = or i8 %k, i8 2" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:51]   --->   Operation 36 'or' 'or_ln51' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%zext_ln51 = zext i8 %or_ln51" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:51]   --->   Operation 37 'zext' 'zext_ln51' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%RoundKey_addr_8 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln51" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:51]   --->   Operation 38 'getelementptr' 'RoundKey_addr_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [2/2] (0.62ns)   --->   "%tempa_3 = load i8 %RoundKey_addr_8" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:51]   --->   Operation 39 'load' 'tempa_3' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%or_ln52 = or i8 %k, i8 3" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:52]   --->   Operation 40 'or' 'or_ln52' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%zext_ln52 = zext i8 %or_ln52" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:52]   --->   Operation 41 'zext' 'zext_ln52' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%RoundKey_addr_9 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln52" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:52]   --->   Operation 42 'getelementptr' 'RoundKey_addr_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [2/2] (0.62ns)   --->   "%tempa_4 = load i8 %RoundKey_addr_9" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:52]   --->   Operation 43 'load' 'tempa_4' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%zext_ln61 = zext i8 %tempa_2" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:61]   --->   Operation 44 'zext' 'zext_ln61' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%sbox_addr = getelementptr i8 %sbox, i64 0, i64 %zext_ln61" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:61]   --->   Operation 45 'getelementptr' 'sbox_addr' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_2 : Operation 46 [2/2] (0.62ns)   --->   "%tempa = load i8 %sbox_addr" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:61]   --->   Operation 46 'load' 'tempa' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_2 : Operation 47 [1/2] (0.66ns)   --->   "%Rcon_load = load i4 %Rcon_addr" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:66]   --->   Operation 47 'load' 'Rcon_load' <Predicate = true> <Delay = 0.66> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 11> <ROM>
+
+State 3 <SV = 2> <Delay = 1.33>
+ST_3 : Operation 48 [1/2] (0.62ns)   --->   "%tempa_3 = load i8 %RoundKey_addr_8" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:51]   --->   Operation 48 'load' 'tempa_3' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_3 : Operation 49 [1/2] (0.62ns)   --->   "%tempa_4 = load i8 %RoundKey_addr_9" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:52]   --->   Operation 49 'load' 'tempa_4' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_3 : Operation 50 [1/2] (0.62ns)   --->   "%tempa = load i8 %sbox_addr" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:61]   --->   Operation 50 'load' 'tempa' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%zext_ln62 = zext i8 %tempa_3" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:62]   --->   Operation 51 'zext' 'zext_ln62' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%sbox_addr_2 = getelementptr i8 %sbox, i64 0, i64 %zext_ln62" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:62]   --->   Operation 52 'getelementptr' 'sbox_addr_2' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_3 : Operation 53 [2/2] (0.62ns)   --->   "%tempa_5 = load i8 %sbox_addr_2" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:62]   --->   Operation 53 'load' 'tempa_5' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 54 [1/1] (0.70ns)   --->   "%m = add i8 %shl_ln1, i8 240" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:68]   --->   Operation 54 'add' 'm' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%zext_ln69 = zext i8 %m" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 55 'zext' 'zext_ln69' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%RoundKey_addr_10 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln69" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 56 'getelementptr' 'RoundKey_addr_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 57 [2/2] (0.62ns)   --->   "%RoundKey_load = load i8 %RoundKey_addr_10" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 57 'load' 'RoundKey_load' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%or_ln70 = or i8 %m, i8 1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 58 'or' 'or_ln70' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%zext_ln70 = zext i8 %or_ln70" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 59 'zext' 'zext_ln70' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%RoundKey_addr_12 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln70" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 60 'getelementptr' 'RoundKey_addr_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [2/2] (0.62ns)   --->   "%RoundKey_load_3 = load i8 %RoundKey_addr_12" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 61 'load' 'RoundKey_load_3' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+
+State 4 <SV = 3> <Delay = 0.92>
+ST_4 : Operation 62 [1/2] (0.62ns)   --->   "%tempa_5 = load i8 %sbox_addr_2" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:62]   --->   Operation 62 'load' 'tempa_5' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%zext_ln63 = zext i8 %tempa_4" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:63]   --->   Operation 63 'zext' 'zext_ln63' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%sbox_addr_3 = getelementptr i8 %sbox, i64 0, i64 %zext_ln63" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:63]   --->   Operation 64 'getelementptr' 'sbox_addr_3' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_4 : Operation 65 [2/2] (0.62ns)   --->   "%tempa_6 = load i8 %sbox_addr_3" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:63]   --->   Operation 65 'load' 'tempa_6' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node xor_ln69)   --->   "%tempa_8 = xor i8 %Rcon_load, i8 %tempa" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:66]   --->   Operation 66 'xor' 'tempa_8' <Predicate = (icmp_ln54)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node xor_ln70)   --->   "%tempa_11 = select i1 %icmp_ln54, i8 %tempa_5, i8 %tempa_2" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:54]   --->   Operation 67 'select' 'tempa_11' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node xor_ln69)   --->   "%tempa_12 = select i1 %icmp_ln54, i8 %tempa_8, i8 %tempa_13" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:54]   --->   Operation 68 'select' 'tempa_12' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 69 [1/2] (0.62ns)   --->   "%RoundKey_load = load i8 %RoundKey_addr_10" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 69 'load' 'RoundKey_load' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_4 : Operation 70 [1/1] (0.30ns) (out node of the LUT)   --->   "%xor_ln69 = xor i8 %RoundKey_load, i8 %tempa_12" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 70 'xor' 'xor_ln69' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 71 [1/2] (0.62ns)   --->   "%RoundKey_load_3 = load i8 %RoundKey_addr_12" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 71 'load' 'RoundKey_load_3' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_4 : Operation 72 [1/1] (0.30ns) (out node of the LUT)   --->   "%xor_ln70 = xor i8 %RoundKey_load_3, i8 %tempa_11" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 72 'xor' 'xor_ln70' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "%or_ln71 = or i8 %m, i8 2" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 73 'or' 'or_ln71' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "%zext_ln71 = zext i8 %or_ln71" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 74 'zext' 'zext_ln71' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (0.00ns)   --->   "%RoundKey_addr_14 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln71" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 75 'getelementptr' 'RoundKey_addr_14' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 76 [2/2] (0.62ns)   --->   "%RoundKey_load_4 = load i8 %RoundKey_addr_14" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 76 'load' 'RoundKey_load_4' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_4 : Operation 77 [1/1] (0.00ns)   --->   "%or_ln72 = or i8 %m, i8 3" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 77 'or' 'or_ln72' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 78 [1/1] (0.00ns)   --->   "%zext_ln72 = zext i8 %or_ln72" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 78 'zext' 'zext_ln72' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 79 [1/1] (0.00ns)   --->   "%RoundKey_addr = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln72" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 79 'getelementptr' 'RoundKey_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 80 [2/2] (0.62ns)   --->   "%RoundKey_load_5 = load i8 %RoundKey_addr" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 80 'load' 'RoundKey_load_5' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+
+State 5 <SV = 4> <Delay = 0.92>
+ST_5 : Operation 81 [1/2] (0.62ns)   --->   "%tempa_6 = load i8 %sbox_addr_3" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:63]   --->   Operation 81 'load' 'tempa_6' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%zext_ln64 = zext i8 %tempa_13" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:64]   --->   Operation 82 'zext' 'zext_ln64' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_5 : Operation 83 [1/1] (0.00ns)   --->   "%sbox_addr_4 = getelementptr i8 %sbox, i64 0, i64 %zext_ln64" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:64]   --->   Operation 83 'getelementptr' 'sbox_addr_4' <Predicate = (icmp_ln54)> <Delay = 0.00>
+ST_5 : Operation 84 [2/2] (0.62ns)   --->   "%tempa_7 = load i8 %sbox_addr_4" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:64]   --->   Operation 84 'load' 'tempa_7' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 85 [1/1] (0.00ns) (grouped into LUT with out node xor_ln71)   --->   "%tempa_10 = select i1 %icmp_ln54, i8 %tempa_6, i8 %tempa_3" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:54]   --->   Operation 85 'select' 'tempa_10' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 86 [1/1] (0.00ns)   --->   "%zext_ln69_1 = zext i8 %shl_ln1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 86 'zext' 'zext_ln69_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 87 [1/1] (0.00ns)   --->   "%RoundKey_addr_11 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln69_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 87 'getelementptr' 'RoundKey_addr_11' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 88 [1/1] (0.62ns)   --->   "%store_ln69 = store i8 %xor_ln69, i8 %RoundKey_addr_11" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69]   --->   Operation 88 'store' 'store_ln69' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_5 : Operation 89 [1/1] (0.00ns)   --->   "%or_ln70_1 = or i8 %shl_ln1, i8 1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 89 'or' 'or_ln70_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 90 [1/1] (0.00ns)   --->   "%zext_ln70_1 = zext i8 %or_ln70_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 90 'zext' 'zext_ln70_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 91 [1/1] (0.00ns)   --->   "%RoundKey_addr_13 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln70_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 91 'getelementptr' 'RoundKey_addr_13' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 92 [1/1] (0.62ns)   --->   "%store_ln70 = store i8 %xor_ln70, i8 %RoundKey_addr_13" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70]   --->   Operation 92 'store' 'store_ln70' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_5 : Operation 93 [1/2] (0.62ns)   --->   "%RoundKey_load_4 = load i8 %RoundKey_addr_14" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 93 'load' 'RoundKey_load_4' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_5 : Operation 94 [1/1] (0.30ns) (out node of the LUT)   --->   "%xor_ln71 = xor i8 %RoundKey_load_4, i8 %tempa_10" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 94 'xor' 'xor_ln71' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 95 [1/2] (0.62ns)   --->   "%RoundKey_load_5 = load i8 %RoundKey_addr" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 95 'load' 'RoundKey_load_5' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+
+State 6 <SV = 5> <Delay = 1.55>
+ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%specloopname_ln47 = specloopname void @_ssdm_op_SpecLoopName, void @empty_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:47]   --->   Operation 96 'specloopname' 'specloopname_ln47' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 97 [1/2] (0.62ns)   --->   "%tempa_7 = load i8 %sbox_addr_4" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:64]   --->   Operation 97 'load' 'tempa_7' <Predicate = (icmp_ln54)> <Delay = 0.62> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node xor_ln72)   --->   "%tempa_9 = select i1 %icmp_ln54, i8 %tempa_7, i8 %tempa_4" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:54]   --->   Operation 98 'select' 'tempa_9' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 99 [1/1] (0.00ns)   --->   "%or_ln71_1 = or i8 %shl_ln1, i8 2" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 99 'or' 'or_ln71_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 100 [1/1] (0.00ns)   --->   "%zext_ln71_1 = zext i8 %or_ln71_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 100 'zext' 'zext_ln71_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 101 [1/1] (0.00ns)   --->   "%RoundKey_addr_15 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln71_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 101 'getelementptr' 'RoundKey_addr_15' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 102 [1/1] (0.62ns)   --->   "%store_ln71 = store i8 %xor_ln71, i8 %RoundKey_addr_15" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71]   --->   Operation 102 'store' 'store_ln71' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_6 : Operation 103 [1/1] (0.30ns) (out node of the LUT)   --->   "%xor_ln72 = xor i8 %RoundKey_load_5, i8 %tempa_9" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 103 'xor' 'xor_ln72' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 104 [1/1] (0.00ns)   --->   "%or_ln72_1 = or i8 %shl_ln1, i8 3" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 104 'or' 'or_ln72_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 105 [1/1] (0.00ns)   --->   "%zext_ln72_1 = zext i8 %or_ln72_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 105 'zext' 'zext_ln72_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "%RoundKey_addr_16 = getelementptr i8 %RoundKey, i64 0, i64 %zext_ln72_1" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 106 'getelementptr' 'RoundKey_addr_16' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (0.62ns)   --->   "%store_ln72 = store i8 %xor_ln72, i8 %RoundKey_addr_16" [/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72]   --->   Operation 107 'store' 'store_ln72' <Predicate = true> <Delay = 0.62> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.62> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 176> <RAM>
+ST_6 : Operation 108 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.preheader"   --->   Operation 108 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.33ns
+The critical path consists of the following:
+	'alloca' operation ('i') [4]  (0 ns)
+	'load' operation ('i') on local variable 'i' [8]  (0 ns)
+	'add' operation ('k', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:48) [16]  (0.705 ns)
+	'getelementptr' operation ('RoundKey_addr_6', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:49) [18]  (0 ns)
+	'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:49) on array 'RoundKey' [19]  (0.626 ns)
+
+ <State 2>: 1.25ns
+The critical path consists of the following:
+	'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:50) on array 'RoundKey' [23]  (0.626 ns)
+	'getelementptr' operation ('sbox_addr', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:61) [35]  (0 ns)
+	'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:61) on array 'sbox' [36]  (0.626 ns)
+
+ <State 3>: 1.33ns
+The critical path consists of the following:
+	'add' operation ('m', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:68) [55]  (0.705 ns)
+	'getelementptr' operation ('RoundKey_addr_10', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:69) [57]  (0 ns)
+	'load' operation ('RoundKey_load', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:69) on array 'RoundKey' [58]  (0.626 ns)
+
+ <State 4>: 0.929ns
+The critical path consists of the following:
+	'load' operation ('RoundKey_load', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:69) on array 'RoundKey' [58]  (0.626 ns)
+	'xor' operation ('xor_ln69', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:69) [59]  (0.303 ns)
+
+ <State 5>: 0.929ns
+The critical path consists of the following:
+	'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:63) on array 'sbox' [42]  (0.626 ns)
+	'select' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:54) [52]  (0 ns)
+	'xor' operation ('xor_ln71', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:71) [76]  (0.303 ns)
+
+ <State 6>: 1.56ns
+The critical path consists of the following:
+	'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:64) on array 'sbox' [45]  (0.626 ns)
+	'select' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:54) [51]  (0 ns)
+	'xor' operation ('xor_ln72', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:72) [85]  (0.303 ns)
+	'store' operation ('store_ln72', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:72) of variable 'xor_ln72', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:72 on array 'RoundKey' [89]  (0.626 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

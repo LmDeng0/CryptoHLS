@@ -1,0 +1,44 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /home/liming/Xilinx/Vitis_HLS/2021.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/liming/Xilinx/Vitis_HLS/2021.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'liming' on host 'ubuntu' (Linux_x86_64 version 5.15.0-139-generic) on Mon Aug 04 05:01:04 PDT 2025
+INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/liming/Desktop/CryptoHLS/vitis_tcl'
+Sourcing Tcl script 'run_syn.tcl'
+INFO: Starting Vitis HLS synthesis test...
+INFO: Target source file: ../test/aes_raw.optimized.cpp
+INFO: [HLS 200-1510] Running: open_project -reset verification_project 
+INFO: [HLS 200-10] Creating and opening project '/home/liming/Desktop/CryptoHLS/vitis_tcl/verification_project'.
+INFO: [HLS 200-1510] Running: set_top aes_encrypt 
+INFO: [HLS 200-1510] Running: add_files ../test/aes_raw.optimized.cpp 
+INFO: [HLS 200-10] Adding design file '../test/aes_raw.optimized.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../test/aes_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file '../test/aes_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/liming/Desktop/CryptoHLS/vitis_tcl/verification_project/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /home/liming/Desktop/CryptoHLS/vitis_tcl/verification_project/solution1/solution1.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2L-e 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2L-e'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+invalid command name "STEP"
+    while executing
+"STEP 1"
+    invoked from within
+"puts "\n[STEP 1] Running C-Simulation...""
+    (file "run_syn.tcl" line 47)
+    invoked from within
+"source run_syn.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $arg] "
+
+INFO: [Common 17-206] Exiting vitis_hls at Mon Aug  4 05:01:07 2025...

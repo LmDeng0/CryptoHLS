@@ -1,0 +1,300 @@
+
+
+================================================================
+== Vitis HLS Report for 'cipher'
+================================================================
+* Date:           Thu Nov  6 13:30:11 2025
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+* Project:        proj_smoke
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.225 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      246|      246|  2.460 us|  2.460 us|  246|  246|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 19
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 20 [2/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2, i8 %state, i8 %RoundKey"   --->   Operation 20 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 21 [1/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2, i8 %state, i8 %RoundKey"   --->   Operation 21 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 22 [2/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_136_1, i8 %state, i8 %RoundKey, i8 %sbox"   --->   Operation 22 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 23 [1/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_136_1, i8 %state, i8 %RoundKey, i8 %sbox"   --->   Operation 23 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 24 [2/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2, i8 %state, i8 %sbox"   --->   Operation 24 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 25 [1/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2, i8 %state, i8 %sbox"   --->   Operation 25 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.66>
+ST_7 : Operation 26 [1/1] (0.00ns)   --->   "%state_addr = getelementptr i8 %state, i64 0, i64 4"   --->   Operation 26 'getelementptr' 'state_addr' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 27 [1/1] (0.00ns)   --->   "%state_addr_1 = getelementptr i8 %state, i64 0, i64 5"   --->   Operation 27 'getelementptr' 'state_addr_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 28 [2/2] (0.66ns)   --->   "%temp = load i4 %state_addr" [/home/CryptoHLS/test/aes_raw.cpp:95]   --->   Operation 28 'load' 'temp' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 29 [2/2] (0.66ns)   --->   "%state_load_2 = load i4 %state_addr_1" [/home/CryptoHLS/test/aes_raw.cpp:96]   --->   Operation 29 'load' 'state_load_2' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 8 <SV = 7> <Delay = 1.33>
+ST_8 : Operation 30 [1/1] (0.00ns)   --->   "%state_addr_2 = getelementptr i8 %state, i64 0, i64 6"   --->   Operation 30 'getelementptr' 'state_addr_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 31 [1/1] (0.00ns)   --->   "%state_addr_3 = getelementptr i8 %state, i64 0, i64 7"   --->   Operation 31 'getelementptr' 'state_addr_3' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 32 [1/2] (0.66ns)   --->   "%temp = load i4 %state_addr" [/home/CryptoHLS/test/aes_raw.cpp:95]   --->   Operation 32 'load' 'temp' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 33 [1/2] (0.66ns)   --->   "%state_load_2 = load i4 %state_addr_1" [/home/CryptoHLS/test/aes_raw.cpp:96]   --->   Operation 33 'load' 'state_load_2' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 34 [2/2] (0.66ns)   --->   "%state_load_3 = load i4 %state_addr_2" [/home/CryptoHLS/test/aes_raw.cpp:97]   --->   Operation 34 'load' 'state_load_3' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 35 [2/2] (0.66ns)   --->   "%state_load_4 = load i4 %state_addr_3" [/home/CryptoHLS/test/aes_raw.cpp:98]   --->   Operation 35 'load' 'state_load_4' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 36 [1/1] (0.66ns)   --->   "%store_ln99 = store i8 %temp, i4 %state_addr_3" [/home/CryptoHLS/test/aes_raw.cpp:99]   --->   Operation 36 'store' 'store_ln99' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 9 <SV = 8> <Delay = 0.66>
+ST_9 : Operation 37 [1/1] (0.00ns)   --->   "%state_addr_4 = getelementptr i8 %state, i64 0, i64 8"   --->   Operation 37 'getelementptr' 'state_addr_4' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 38 [1/1] (0.00ns)   --->   "%state_addr_5 = getelementptr i8 %state, i64 0, i64 10"   --->   Operation 38 'getelementptr' 'state_addr_5' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 39 [1/2] (0.66ns)   --->   "%state_load_3 = load i4 %state_addr_2" [/home/CryptoHLS/test/aes_raw.cpp:97]   --->   Operation 39 'load' 'state_load_3' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 40 [1/2] (0.66ns)   --->   "%state_load_4 = load i4 %state_addr_3" [/home/CryptoHLS/test/aes_raw.cpp:98]   --->   Operation 40 'load' 'state_load_4' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 41 [2/2] (0.66ns)   --->   "%temp_4 = load i4 %state_addr_4" [/home/CryptoHLS/test/aes_raw.cpp:101]   --->   Operation 41 'load' 'temp_4' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 42 [2/2] (0.66ns)   --->   "%state_load_6 = load i4 %state_addr_5" [/home/CryptoHLS/test/aes_raw.cpp:102]   --->   Operation 42 'load' 'state_load_6' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 10 <SV = 9> <Delay = 0.66>
+ST_10 : Operation 43 [1/1] (0.00ns)   --->   "%state_addr_6 = getelementptr i8 %state, i64 0, i64 9"   --->   Operation 43 'getelementptr' 'state_addr_6' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 44 [1/1] (0.00ns)   --->   "%state_addr_7 = getelementptr i8 %state, i64 0, i64 11"   --->   Operation 44 'getelementptr' 'state_addr_7' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 45 [1/2] (0.66ns)   --->   "%temp_4 = load i4 %state_addr_4" [/home/CryptoHLS/test/aes_raw.cpp:101]   --->   Operation 45 'load' 'temp_4' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 46 [1/2] (0.66ns)   --->   "%state_load_6 = load i4 %state_addr_5" [/home/CryptoHLS/test/aes_raw.cpp:102]   --->   Operation 46 'load' 'state_load_6' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 47 [2/2] (0.66ns)   --->   "%temp_5 = load i4 %state_addr_6" [/home/CryptoHLS/test/aes_raw.cpp:104]   --->   Operation 47 'load' 'temp_5' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 48 [2/2] (0.66ns)   --->   "%state_load_8 = load i4 %state_addr_7" [/home/CryptoHLS/test/aes_raw.cpp:105]   --->   Operation 48 'load' 'state_load_8' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 11 <SV = 10> <Delay = 0.66>
+ST_11 : Operation 49 [1/1] (0.00ns)   --->   "%state_addr_8 = getelementptr i8 %state, i64 0, i64 12"   --->   Operation 49 'getelementptr' 'state_addr_8' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 50 [1/1] (0.00ns)   --->   "%state_addr_9 = getelementptr i8 %state, i64 0, i64 15"   --->   Operation 50 'getelementptr' 'state_addr_9' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 51 [1/2] (0.66ns)   --->   "%temp_5 = load i4 %state_addr_6" [/home/CryptoHLS/test/aes_raw.cpp:104]   --->   Operation 51 'load' 'temp_5' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 52 [1/2] (0.66ns)   --->   "%state_load_8 = load i4 %state_addr_7" [/home/CryptoHLS/test/aes_raw.cpp:105]   --->   Operation 52 'load' 'state_load_8' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 53 [2/2] (0.66ns)   --->   "%temp_6 = load i4 %state_addr_8" [/home/CryptoHLS/test/aes_raw.cpp:108]   --->   Operation 53 'load' 'temp_6' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 54 [2/2] (0.66ns)   --->   "%state_load_10 = load i4 %state_addr_9" [/home/CryptoHLS/test/aes_raw.cpp:109]   --->   Operation 54 'load' 'state_load_10' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 12 <SV = 11> <Delay = 1.33>
+ST_12 : Operation 55 [1/1] (0.00ns)   --->   "%state_addr_10 = getelementptr i8 %state, i64 0, i64 14"   --->   Operation 55 'getelementptr' 'state_addr_10' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 56 [1/1] (0.00ns)   --->   "%state_addr_11 = getelementptr i8 %state, i64 0, i64 13"   --->   Operation 56 'getelementptr' 'state_addr_11' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 57 [1/2] (0.66ns)   --->   "%temp_6 = load i4 %state_addr_8" [/home/CryptoHLS/test/aes_raw.cpp:108]   --->   Operation 57 'load' 'temp_6' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_12 : Operation 58 [1/2] (0.66ns)   --->   "%state_load_10 = load i4 %state_addr_9" [/home/CryptoHLS/test/aes_raw.cpp:109]   --->   Operation 58 'load' 'state_load_10' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_12 : Operation 59 [2/2] (0.66ns)   --->   "%state_load_11 = load i4 %state_addr_10" [/home/CryptoHLS/test/aes_raw.cpp:110]   --->   Operation 59 'load' 'state_load_11' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_12 : Operation 60 [2/2] (0.66ns)   --->   "%state_load_12 = load i4 %state_addr_11" [/home/CryptoHLS/test/aes_raw.cpp:111]   --->   Operation 60 'load' 'state_load_12' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_12 : Operation 61 [1/1] (0.66ns)   --->   "%store_ln112 = store i8 %temp_6, i4 %state_addr_11" [/home/CryptoHLS/test/aes_raw.cpp:112]   --->   Operation 61 'store' 'store_ln112' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 13 <SV = 12> <Delay = 0.66>
+ST_13 : Operation 62 [1/1] (0.66ns)   --->   "%store_ln96 = store i8 %state_load_2, i4 %state_addr" [/home/CryptoHLS/test/aes_raw.cpp:96]   --->   Operation 62 'store' 'store_ln96' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 63 [1/1] (0.66ns)   --->   "%store_ln97 = store i8 %state_load_3, i4 %state_addr_1" [/home/CryptoHLS/test/aes_raw.cpp:97]   --->   Operation 63 'store' 'store_ln97' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 64 [1/2] (0.66ns)   --->   "%state_load_11 = load i4 %state_addr_10" [/home/CryptoHLS/test/aes_raw.cpp:110]   --->   Operation 64 'load' 'state_load_11' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 65 [1/2] (0.66ns)   --->   "%state_load_12 = load i4 %state_addr_11" [/home/CryptoHLS/test/aes_raw.cpp:111]   --->   Operation 65 'load' 'state_load_12' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 14 <SV = 13> <Delay = 0.66>
+ST_14 : Operation 66 [1/1] (0.66ns)   --->   "%store_ln98 = store i8 %state_load_4, i4 %state_addr_2" [/home/CryptoHLS/test/aes_raw.cpp:98]   --->   Operation 66 'store' 'store_ln98' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 67 [1/1] (0.66ns)   --->   "%store_ln102 = store i8 %state_load_6, i4 %state_addr_4" [/home/CryptoHLS/test/aes_raw.cpp:102]   --->   Operation 67 'store' 'store_ln102' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 15 <SV = 14> <Delay = 0.66>
+ST_15 : Operation 68 [1/1] (0.66ns)   --->   "%store_ln103 = store i8 %temp_4, i4 %state_addr_5" [/home/CryptoHLS/test/aes_raw.cpp:103]   --->   Operation 68 'store' 'store_ln103' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 69 [1/1] (0.66ns)   --->   "%store_ln105 = store i8 %state_load_8, i4 %state_addr_6" [/home/CryptoHLS/test/aes_raw.cpp:105]   --->   Operation 69 'store' 'store_ln105' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 16 <SV = 15> <Delay = 0.66>
+ST_16 : Operation 70 [1/1] (0.66ns)   --->   "%store_ln106 = store i8 %temp_5, i4 %state_addr_7" [/home/CryptoHLS/test/aes_raw.cpp:106]   --->   Operation 70 'store' 'store_ln106' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_16 : Operation 71 [1/1] (0.66ns)   --->   "%store_ln109 = store i8 %state_load_10, i4 %state_addr_8" [/home/CryptoHLS/test/aes_raw.cpp:109]   --->   Operation 71 'store' 'store_ln109' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 17 <SV = 16> <Delay = 0.66>
+ST_17 : Operation 72 [1/1] (0.66ns)   --->   "%store_ln110 = store i8 %state_load_11, i4 %state_addr_9" [/home/CryptoHLS/test/aes_raw.cpp:110]   --->   Operation 72 'store' 'store_ln110' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 73 [1/1] (0.66ns)   --->   "%store_ln111 = store i8 %state_load_12, i4 %state_addr_10" [/home/CryptoHLS/test/aes_raw.cpp:111]   --->   Operation 73 'store' 'store_ln111' <Predicate = true> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+
+State 18 <SV = 17> <Delay = 0.00>
+ST_18 : Operation 74 [2/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22, i8 %state, i8 %RoundKey"   --->   Operation 74 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 75 [1/2] (0.00ns)   --->   "%call_ln0 = call void @cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22, i8 %state, i8 %RoundKey"   --->   Operation 75 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 76 [1/1] (0.00ns)   --->   "%ret_ln146 = ret" [/home/CryptoHLS/test/aes_raw.cpp:146]   --->   Operation 76 'ret' 'ret_ln146' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0.667ns
+The critical path consists of the following:
+	'getelementptr' operation ('state_addr') [4]  (0 ns)
+	'load' operation ('temp', /home/CryptoHLS/test/aes_raw.cpp:95) on array 'state' [19]  (0.667 ns)
+
+ <State 8>: 1.33ns
+The critical path consists of the following:
+	'load' operation ('temp', /home/CryptoHLS/test/aes_raw.cpp:95) on array 'state' [19]  (0.667 ns)
+	'store' operation ('store_ln99', /home/CryptoHLS/test/aes_raw.cpp:99) of variable 'temp', /home/CryptoHLS/test/aes_raw.cpp:95 on array 'state' [26]  (0.667 ns)
+
+ <State 9>: 0.667ns
+The critical path consists of the following:
+	'load' operation ('state_load_3', /home/CryptoHLS/test/aes_raw.cpp:97) on array 'state' [22]  (0.667 ns)
+
+ <State 10>: 0.667ns
+The critical path consists of the following:
+	'load' operation ('temp', /home/CryptoHLS/test/aes_raw.cpp:101) on array 'state' [27]  (0.667 ns)
+
+ <State 11>: 0.667ns
+The critical path consists of the following:
+	'load' operation ('temp', /home/CryptoHLS/test/aes_raw.cpp:104) on array 'state' [31]  (0.667 ns)
+
+ <State 12>: 1.33ns
+The critical path consists of the following:
+	'load' operation ('temp', /home/CryptoHLS/test/aes_raw.cpp:108) on array 'state' [35]  (0.667 ns)
+	'store' operation ('store_ln112', /home/CryptoHLS/test/aes_raw.cpp:112) of variable 'temp', /home/CryptoHLS/test/aes_raw.cpp:108 on array 'state' [42]  (0.667 ns)
+
+ <State 13>: 0.667ns
+The critical path consists of the following:
+	'store' operation ('store_ln96', /home/CryptoHLS/test/aes_raw.cpp:96) of variable 'state_load_2', /home/CryptoHLS/test/aes_raw.cpp:96 on array 'state' [21]  (0.667 ns)
+
+ <State 14>: 0.667ns
+The critical path consists of the following:
+	'store' operation ('store_ln98', /home/CryptoHLS/test/aes_raw.cpp:98) of variable 'state_load_4', /home/CryptoHLS/test/aes_raw.cpp:98 on array 'state' [25]  (0.667 ns)
+
+ <State 15>: 0.667ns
+The critical path consists of the following:
+	'store' operation ('store_ln103', /home/CryptoHLS/test/aes_raw.cpp:103) of variable 'temp', /home/CryptoHLS/test/aes_raw.cpp:101 on array 'state' [30]  (0.667 ns)
+
+ <State 16>: 0.667ns
+The critical path consists of the following:
+	'store' operation ('store_ln106', /home/CryptoHLS/test/aes_raw.cpp:106) of variable 'temp', /home/CryptoHLS/test/aes_raw.cpp:104 on array 'state' [34]  (0.667 ns)
+
+ <State 17>: 0.667ns
+The critical path consists of the following:
+	'store' operation ('store_ln110', /home/CryptoHLS/test/aes_raw.cpp:110) of variable 'state_load_11', /home/CryptoHLS/test/aes_raw.cpp:110 on array 'state' [39]  (0.667 ns)
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

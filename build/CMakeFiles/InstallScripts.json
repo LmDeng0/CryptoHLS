@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/CryptoHLS/build/cmake_install.cmake",
+		"/home/CryptoHLS/build/libs/AST/cmake_install.cmake",
+		"/home/CryptoHLS/build/libs/IR/cmake_install.cmake",
+		"/home/CryptoHLS/build/libs/DSE/cmake_install.cmake",
+		"/home/CryptoHLS/build/libs/IRGenerator/cmake_install.cmake",
+		"/home/CryptoHLS/build/libs/Analysis/cmake_install.cmake",
+		"/home/CryptoHLS/build/libs/GraphExtractor/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

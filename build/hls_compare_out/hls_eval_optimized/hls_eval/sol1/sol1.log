@@ -1,0 +1,286 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.1 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2L-e 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2L-e'
+INFO: [HLS 200-1510] Running: create_clock -period 10.0 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 249.850 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/CryptoHLS/test/aes_raw.optimized.final.cpp' ... 
+WARNING: [HLS 207-5544] '#pragma HLS unroll' can only be applied inside loop body: /home/CryptoHLS/test/aes_raw.optimized.final.cpp:170:9
+WARNING: [HLS 207-5544] '#pragma HLS unroll' can only be applied inside loop body: /home/CryptoHLS/test/aes_raw.optimized.final.cpp:170:9
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.16 seconds. CPU system time: 0.57 seconds. Elapsed time: 0.87 seconds; current allocated memory: 251.744 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-279] Initial Interval estimation mode is set into default.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-178] Inlining function 'xtime(unsigned char)' into 'MixColumns(unsigned char (*) [4][4])' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:120:0)
+INFO: [HLS 214-178] Inlining function 'AddRoundKey(int, unsigned char (*) [4][4], unsigned char const*)' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'SubBytes(unsigned char (*) [4][4])' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'ShiftRows(unsigned char (*) [4][4])' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'MixColumns(unsigned char (*) [4][4])' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'KeyExpansion(unsigned char*, unsigned char const*)' into 'aes_encrypt(unsigned char*, unsigned char*, unsigned char*)' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:151:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.19 seconds. CPU system time: 0.72 seconds. Elapsed time: 5.82 seconds; current allocated memory: 254.948 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 254.950 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 256.695 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 256.006 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_78_2' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:78) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_136_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:136) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_86_2' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:86) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_78_2' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:78) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_41_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:41) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_47_2' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:47) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_161_2' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:161) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_172_4' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:172) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_136_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:136) in function 'cipher' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_85_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:85) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_86_2' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:86) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_122_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:122) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_77_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:77) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_78_2' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:78) in function 'cipher' completely with a factor of 4.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:47:31) in function 'aes_encrypt'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'cipher' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:133)...60 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.18 seconds; current allocated memory: 277.620 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_77_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:77:31) in function 'cipher'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_85_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:85:31) in function 'cipher'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_77_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:77:31) in function 'cipher'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_160_1' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:160:32) in function 'aes_encrypt'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_171_3' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:171:28) in function 'aes_encrypt'.
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:96:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:97:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:98:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:99:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:102:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:103:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:105:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:106:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:109:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:110:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:111:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:112:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:79:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:87:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:42:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:43:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:44:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:45:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:69:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:70:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:71:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:72:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.optimized.final.cpp:162:25)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.15 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.18 seconds; current allocated memory: 359.215 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'aes_encrypt' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_41_1'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' (loop 'VITIS_LOOP_41_1'): Unable to schedule 'load' operation ('key_load_1', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:43) on array 'key' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'key'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 3, loop 'VITIS_LOOP_41_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.13 seconds; current allocated memory: 359.666 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 359.857 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_47_2'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('RoundKey_addr_11_write_ln69', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:69) of variable 'xor_ln69', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:69 on array 'RoundKey' and 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:49) on array 'RoundKey'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('RoundKey_addr_16_write_ln72', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:72) of variable 'xor_ln72', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:72 on array 'RoundKey' and 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:52) on array 'RoundKey'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to schedule 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:50) on array 'RoundKey' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'RoundKey'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to schedule 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:49) on array 'RoundKey' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'RoundKey'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to schedule 'store' operation ('RoundKey_addr_13_write_ln70', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:70) of variable 'xor_ln70', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:70 on array 'RoundKey' due to limited memory ports (II = 5). Please consider using a memory core with more ports or partitioning the array 'RoundKey'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 6, loop 'VITIS_LOOP_47_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 360.177 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 360.557 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_160_1_VITIS_LOOP_161_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_160_1_VITIS_LOOP_161_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 360.712 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 360.884 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 361.034 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 361.194 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_136_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_136_1'.
+WARNING: [HLS 200-880] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('state_addr_write_ln79', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79) of variable 'xor_ln79_17', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79 on array 'state' and 'load' operation ('state_load_15', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:87) on array 'state'.
+WARNING: [HLS 200-880] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('state_addr_write_ln79', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79) of variable 'xor_ln79_17', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79 on array 'state' and 'load' operation ('state_load_15', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:87) on array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('state_load_6', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:87) on array 'state' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('state_load_8', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:87) on array 'state' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'store' operation ('state_addr_10_write_ln79', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79) of variable 'xor_ln79_7', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79 on array 'state' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'store' operation ('state_addr_8_write_ln79', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79) of variable 'xor_ln79_15', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:79 on array 'state' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('sbox_load_5', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:87) on array 'sbox' due to limited memory ports (II = 17). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('temp', /home/CryptoHLS/test/aes_raw.optimized.final.cpp:87) on array 'sbox' due to limited memory ports (II = 18). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 19, Depth = 19, loop 'VITIS_LOOP_136_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.14 seconds; current allocated memory: 362.166 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.48 seconds; current allocated memory: 363.239 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_85_1_VITIS_LOOP_86_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'VITIS_LOOP_85_1_VITIS_LOOP_86_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.55 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.56 seconds; current allocated memory: 363.384 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 363.543 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 363.694 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 363.862 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 364.031 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 364.222 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_171_3_VITIS_LOOP_172_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_171_3_VITIS_LOOP_172_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_171_3_VITIS_LOOP_172_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.42 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 364.371 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 364.546 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 364.618 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 364.712 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' pipeline 'VITIS_LOOP_41_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_41_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.43 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.44 seconds; current allocated memory: 365.089 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_47_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 366.358 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2' pipeline 'VITIS_LOOP_160_1_VITIS_LOOP_161_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 368.118 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2' pipeline 'VITIS_LOOP_77_1_VITIS_LOOP_78_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 369.071 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_136_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_136_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 371.624 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2' pipeline 'VITIS_LOOP_85_1_VITIS_LOOP_86_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.09 seconds; current allocated memory: 376.738 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22' pipeline 'VITIS_LOOP_77_1_VITIS_LOOP_78_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 377.731 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 379.097 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_171_3_VITIS_LOOP_172_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_encrypt_Pipeline_VITIS_LOOP_171_3_VITIS_LOOP_172_4' pipeline 'VITIS_LOOP_171_3_VITIS_LOOP_172_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_171_3_VITIS_LOOP_172_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.42 seconds. CPU system time: 0 seconds. Elapsed time: 0.43 seconds; current allocated memory: 380.259 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes_encrypt/key' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes_encrypt/plaintext' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes_encrypt/ciphertext' to 'ap_memory'.

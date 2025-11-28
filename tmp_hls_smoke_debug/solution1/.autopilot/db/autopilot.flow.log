@@ -1,0 +1,1358 @@
+INFO-FLOW: Workspace /home/CryptoHLS/tmp_hls_smoke_debug/solution1 opened at Thu Nov 06 13:35:27 CST 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -default_interface 
+Execute       get_config_rtl -register_reset_num 
+Execute     set_part xcvu9p-flga2104-2L-e 
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flga2104-2L-e 
+Execute       create_platform xcvu9p-flga2104-2L-e -board  
+DBG:HLSDevice: Trying to load device library: /home/Xilinx/Vitis_HLS/2021.1/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/Xilinx/Vivado/2021.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/DSP48/virtexuplus_dsp48e2.hlp 
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2L-e'
+Command       create_platform done; 1.41 sec.
+Execute       source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/util.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.11 sec.
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.54 sec.
+Execute     create_clock -period 10.0 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10.0 -name default 
+Execute       ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -hw_syn 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -pre_tcl 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 249.933 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/CryptoHLS/test/aes_raw.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling /home/CryptoHLS/test/aes_raw.cpp as C++
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang /home/CryptoHLS/test/aes_raw.cpp -foptimization-record-file=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.aes_raw.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/Xilinx/Vitis_HLS/2021.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E -std=c++17 -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/39 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot -I /home/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -hls-platform-db-name=/home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.aes_raw.cpp.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.aes_raw.cpp.err.log 
+Command         ap_eval done; 0.12 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute         set_directive_top aes_encrypt -name=aes_encrypt 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute         list_core -type functional_unit 
+Execute         ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -hls-platform-db-name=/home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.err.log 
+Command         ap_eval done; 0.11 sec.
+Execute         clang_tidy xilinx-systemc-detector /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp std=c++17 -target fpga  -directive=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/.systemc_flag -fix-errors /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -- -std=c++17 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp std=c++17 -target fpga  -directive=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/all.directive.json -fix-errors /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -- -std=c++17 -target fpga -fhls -ferror-limit=0
+Execute         clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp std=c++17 -target fpga  
+INFO-FLOW: exec /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -- -std=c++17 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.2 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp std=c++17 -target fpga  
+Execute           ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang-tidy.aes_raw.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -- -std=c++17 -target fpga -fhls -ferror-limit=0 > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang-tidy.aes_raw.pp.0.cpp.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang-tidy.aes_raw.pp.0.cpp.err.log 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command         clang_tidy done; 0.12 sec.
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/xilinx-dataflow-lawyer.aes_raw.pp.0.cpp.diag.yml /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -- -std=c++17 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/xilinx-dataflow-lawyer.aes_raw.pp.0.cpp.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/xilinx-dataflow-lawyer.aes_raw.pp.0.cpp.err.log 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute         ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.aes_raw.pp.0.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.pp.0.cpp -std=c++17 -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot -I /home/Xilinx/Vitis_HLS/2021.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.bc -hls-platform-db-name=/home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.aes_raw.pp.0.cpp.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.aes_raw.pp.0.cpp.err.log 
+Command         ap_eval done; 0.14 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.12 seconds. CPU system time: 0.54 seconds. Elapsed time: 0.84 seconds; current allocated memory: 251.631 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute         run_link_or_opt -out /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.g.bc"  
+Execute           ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_raw.g.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.0.bc > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute           ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.diag.yml /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute         run_link_or_opt -out /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/Xilinx/Vitis_HLS/2021.1/lnx64/lib/libhlsm_39.bc /home/Xilinx/Vitis_HLS/2021.1/lnx64/lib/libhlsmc++_39.bc 
+Execute           ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/Xilinx/Vitis_HLS/2021.1/lnx64/lib/libhlsm_39.bc /home/Xilinx/Vitis_HLS/2021.1/lnx64/lib/libhlsmc++_39.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
+Command           ap_eval done; 2.82 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 2.82 sec.
+Execute         run_link_or_opt -opt -out /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=aes_encrypt -reflow-float-conversion 
+Execute           ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=aes_encrypt -reflow-float-conversion -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
+Command           ap_eval done; 0.96 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 0.96 sec.
+Execute         run_link_or_opt -out /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/Xilinx/Vitis_HLS/2021.1/lnx64/lib/libfloatconversion_39.bc 
+Execute           ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/Xilinx/Vitis_HLS/2021.1/lnx64/lib/libfloatconversion_39.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=aes_encrypt 
+Execute           ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.diag.yml /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.err.log 
+INFO-FLOW: 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_compile -instruction_warning_threshold 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_array_partition -throughput_driven 
+Execute         send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute         is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute         ap_eval exec -ignorestderr /home/Xilinx/Vitis_HLS/2021.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=aes_encrypt -mllvm -hls-db-dir -mllvm /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshhold=200000 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=0 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-disaggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -x ir /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtexuplus_medium > /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
+Command         ap_eval done; 0.22 sec.
+INFO: [HLS 214-279] Initial Interval estimation mode is set into default.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-178] Inlining function 'xtime(unsigned char)' into 'MixColumns(unsigned char (*) [4][4])' (/home/CryptoHLS/test/aes_raw.cpp:120:0)
+INFO: [HLS 214-178] Inlining function 'AddRoundKey(int, unsigned char (*) [4][4], unsigned char const*)' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'SubBytes(unsigned char (*) [4][4])' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'ShiftRows(unsigned char (*) [4][4])' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'MixColumns(unsigned char (*) [4][4])' into 'cipher(unsigned char (*) [4][4], unsigned char const*)' (/home/CryptoHLS/test/aes_raw.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'KeyExpansion(unsigned char*, unsigned char const*)' into 'aes_encrypt(unsigned char*, unsigned char*, unsigned char*)' (/home/CryptoHLS/test/aes_raw.cpp:151:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.93 seconds. CPU system time: 0.57 seconds. Elapsed time: 5.37 seconds; current allocated memory: 254.708 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 254.710 MB.
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top aes_encrypt -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.0.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 256.457 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.1.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 255.766 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.g.1.bc to /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.o.1.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_78_2' (/home/CryptoHLS/test/aes_raw.cpp:78) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_136_1' (/home/CryptoHLS/test/aes_raw.cpp:136) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_86_2' (/home/CryptoHLS/test/aes_raw.cpp:86) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_78_2' (/home/CryptoHLS/test/aes_raw.cpp:78) in function 'cipher' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_41_1' (/home/CryptoHLS/test/aes_raw.cpp:41) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_47_2' (/home/CryptoHLS/test/aes_raw.cpp:47) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_161_2' (/home/CryptoHLS/test/aes_raw.cpp:161) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_171_4' (/home/CryptoHLS/test/aes_raw.cpp:171) in function 'aes_encrypt' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_136_1' (/home/CryptoHLS/test/aes_raw.cpp:136) in function 'cipher' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_85_1' (/home/CryptoHLS/test/aes_raw.cpp:85) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_86_2' (/home/CryptoHLS/test/aes_raw.cpp:86) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_122_1' (/home/CryptoHLS/test/aes_raw.cpp:122) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_77_1' (/home/CryptoHLS/test/aes_raw.cpp:77) in function 'cipher' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_78_2' (/home/CryptoHLS/test/aes_raw.cpp:78) in function 'cipher' completely with a factor of 4.
+Command           transform done; 0.12 sec.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/CryptoHLS/test/aes_raw.cpp:47:31) in function 'aes_encrypt'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'cipher' (/home/CryptoHLS/test/aes_raw.cpp:133)...60 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 277.382 MB.
+Execute           get_config_compile -enable_auto_rewind 
+Execute           get_config_compile -enable_loop_extract 
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation2 -deadargelim -globaldce -mem2reg -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.o.2.bc -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_77_1' (/home/CryptoHLS/test/aes_raw.cpp:77:31) in function 'cipher'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_85_1' (/home/CryptoHLS/test/aes_raw.cpp:85:31) in function 'cipher'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_77_1' (/home/CryptoHLS/test/aes_raw.cpp:77:31) in function 'cipher'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_160_1' (/home/CryptoHLS/test/aes_raw.cpp:160:32) in function 'aes_encrypt'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_170_3' (/home/CryptoHLS/test/aes_raw.cpp:170:32) in function 'aes_encrypt'.
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:96:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:97:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:98:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:99:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:102:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:103:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:105:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:106:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:109:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:110:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:111:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:112:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:79:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:87:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:42:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:43:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:44:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:45:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:69:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:70:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:71:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'RoundKey' (/home/CryptoHLS/test/aes_raw.cpp:72:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'state' (/home/CryptoHLS/test/aes_raw.cpp:162:25)
+Command           transform done; 0.17 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.18 seconds; current allocated memory: 358.963 MB.
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 0.4 sec.
+Command       elaborate done; 6.62 sec.
+Execute       ap_eval exec zip -j /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Command       ap_eval done; error code: 1; 
+INFO-FLOW: exec zip -j /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app
+INFO-FLOW: couldn't execute "zip": no such file or directory
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'aes_encrypt' ...
+Execute         ap_set_top_model aes_encrypt 
+Execute         get_model_list aes_encrypt -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model aes_encrypt 
+Execute         preproc_iomode -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         preproc_iomode -model cipher 
+Execute         preproc_iomode -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         preproc_iomode -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         preproc_iomode -model cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         preproc_iomode -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         preproc_iomode -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         preproc_iomode -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         preproc_iomode -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         get_model_list aes_encrypt -filter all-wo-channel 
+INFO-FLOW: Model list for configure: aes_encrypt_Pipeline_VITIS_LOOP_41_1 aes_encrypt_Pipeline_VITIS_LOOP_47_2 aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 cipher_Pipeline_VITIS_LOOP_136_1 cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 cipher aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 aes_encrypt
+INFO-FLOW: Configuring Module : aes_encrypt_Pipeline_VITIS_LOOP_41_1 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         apply_spec_resource_limit aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+INFO-FLOW: Configuring Module : aes_encrypt_Pipeline_VITIS_LOOP_47_2 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         apply_spec_resource_limit aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+INFO-FLOW: Configuring Module : aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         apply_spec_resource_limit aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+INFO-FLOW: Configuring Module : cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         apply_spec_resource_limit cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+INFO-FLOW: Configuring Module : cipher_Pipeline_VITIS_LOOP_136_1 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         apply_spec_resource_limit cipher_Pipeline_VITIS_LOOP_136_1 
+INFO-FLOW: Configuring Module : cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         apply_spec_resource_limit cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+INFO-FLOW: Configuring Module : cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         apply_spec_resource_limit cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+INFO-FLOW: Configuring Module : cipher ...
+Execute         set_default_model cipher 
+Execute         apply_spec_resource_limit cipher 
+INFO-FLOW: Configuring Module : aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         apply_spec_resource_limit aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+INFO-FLOW: Configuring Module : aes_encrypt ...
+Execute         set_default_model aes_encrypt 
+Execute         apply_spec_resource_limit aes_encrypt 
+INFO-FLOW: Model list for preprocess: aes_encrypt_Pipeline_VITIS_LOOP_41_1 aes_encrypt_Pipeline_VITIS_LOOP_47_2 aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 cipher_Pipeline_VITIS_LOOP_136_1 cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 cipher aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 aes_encrypt
+INFO-FLOW: Preprocessing Module: aes_encrypt_Pipeline_VITIS_LOOP_41_1 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         cdfg_preprocess -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+INFO-FLOW: Preprocessing Module: aes_encrypt_Pipeline_VITIS_LOOP_47_2 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         cdfg_preprocess -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+INFO-FLOW: Preprocessing Module: aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         cdfg_preprocess -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+INFO-FLOW: Preprocessing Module: cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         cdfg_preprocess -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+INFO-FLOW: Preprocessing Module: cipher_Pipeline_VITIS_LOOP_136_1 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         cdfg_preprocess -model cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_136_1 
+INFO-FLOW: Preprocessing Module: cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         cdfg_preprocess -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+INFO-FLOW: Preprocessing Module: cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 ...
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         cdfg_preprocess -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+INFO-FLOW: Preprocessing Module: cipher ...
+Execute         set_default_model cipher 
+Execute         cdfg_preprocess -model cipher 
+Execute         rtl_gen_preprocess cipher 
+INFO-FLOW: Preprocessing Module: aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 ...
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         cdfg_preprocess -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+INFO-FLOW: Preprocessing Module: aes_encrypt ...
+Execute         set_default_model aes_encrypt 
+Execute         cdfg_preprocess -model aes_encrypt 
+Execute         rtl_gen_preprocess aes_encrypt 
+INFO-FLOW: Model list for synthesis: aes_encrypt_Pipeline_VITIS_LOOP_41_1 aes_encrypt_Pipeline_VITIS_LOOP_47_2 aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 cipher_Pipeline_VITIS_LOOP_136_1 cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 cipher aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 aes_encrypt
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         schedule -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_41_1'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' (loop 'VITIS_LOOP_41_1'): Unable to schedule 'load' operation ('key_load_1', /home/CryptoHLS/test/aes_raw.cpp:43) on array 'key' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'key'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 3, loop 'VITIS_LOOP_41_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.1 seconds; current allocated memory: 359.408 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_encrypt_Pipeline_VITIS_LOOP_41_1.
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         bind -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 359.583 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.bind.adb -f 
+INFO-FLOW: Finish binding aes_encrypt_Pipeline_VITIS_LOOP_41_1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         schedule -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_47_2'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('RoundKey_addr_11_write_ln69', /home/CryptoHLS/test/aes_raw.cpp:69) of variable 'xor_ln69', /home/CryptoHLS/test/aes_raw.cpp:69 on array 'RoundKey' and 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.cpp:49) on array 'RoundKey'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('RoundKey_addr_16_write_ln72', /home/CryptoHLS/test/aes_raw.cpp:72) of variable 'xor_ln72', /home/CryptoHLS/test/aes_raw.cpp:72 on array 'RoundKey' and 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.cpp:52) on array 'RoundKey'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to schedule 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.cpp:50) on array 'RoundKey' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'RoundKey'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to schedule 'load' operation ('tempa', /home/CryptoHLS/test/aes_raw.cpp:49) on array 'RoundKey' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'RoundKey'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' (loop 'VITIS_LOOP_47_2'): Unable to schedule 'store' operation ('RoundKey_addr_13_write_ln70', /home/CryptoHLS/test/aes_raw.cpp:70) of variable 'xor_ln70', /home/CryptoHLS/test/aes_raw.cpp:70 on array 'RoundKey' due to limited memory ports (II = 5). Please consider using a memory core with more ports or partitioning the array 'RoundKey'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 6, loop 'VITIS_LOOP_47_2'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.12 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 359.893 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_encrypt_Pipeline_VITIS_LOOP_47_2.
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         bind -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 360.269 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.11 sec.
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.bind.adb -f 
+INFO-FLOW: Finish binding aes_encrypt_Pipeline_VITIS_LOOP_47_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         schedule -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_160_1_VITIS_LOOP_161_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_160_1_VITIS_LOOP_161_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 360.426 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         bind -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 360.594 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.bind.adb -f 
+INFO-FLOW: Finish binding aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         schedule -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 360.740 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.sched.adb -f 
+INFO-FLOW: Finish scheduling cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         bind -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 360.897 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.bind.adb -f 
+INFO-FLOW: Finish binding cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_136_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         schedule -model cipher_Pipeline_VITIS_LOOP_136_1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_136_1'.
+WARNING: [HLS 200-880] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('state_addr_write_ln79', /home/CryptoHLS/test/aes_raw.cpp:79) of variable 'xor_ln79_17', /home/CryptoHLS/test/aes_raw.cpp:79 on array 'state' and 'load' operation ('state_load_15', /home/CryptoHLS/test/aes_raw.cpp:87) on array 'state'.
+WARNING: [HLS 200-880] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('state_addr_write_ln79', /home/CryptoHLS/test/aes_raw.cpp:79) of variable 'xor_ln79_17', /home/CryptoHLS/test/aes_raw.cpp:79 on array 'state' and 'load' operation ('state_load_15', /home/CryptoHLS/test/aes_raw.cpp:87) on array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('state_load_6', /home/CryptoHLS/test/aes_raw.cpp:87) on array 'state' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('state_load_8', /home/CryptoHLS/test/aes_raw.cpp:87) on array 'state' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'store' operation ('state_addr_10_write_ln79', /home/CryptoHLS/test/aes_raw.cpp:79) of variable 'xor_ln79_7', /home/CryptoHLS/test/aes_raw.cpp:79 on array 'state' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'store' operation ('state_addr_8_write_ln79', /home/CryptoHLS/test/aes_raw.cpp:79) of variable 'xor_ln79_15', /home/CryptoHLS/test/aes_raw.cpp:79 on array 'state' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'state'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('sbox_load_5', /home/CryptoHLS/test/aes_raw.cpp:87) on array 'sbox' due to limited memory ports (II = 17). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+WARNING: [HLS 200-885] The II Violation in module 'cipher_Pipeline_VITIS_LOOP_136_1' (loop 'VITIS_LOOP_136_1'): Unable to schedule 'load' operation ('temp', /home/CryptoHLS/test/aes_raw.cpp:87) on array 'sbox' due to limited memory ports (II = 18). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 19, Depth = 19, loop 'VITIS_LOOP_136_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 2.98 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 3.03 seconds; current allocated memory: 361.822 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.29 sec.
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.sched.adb -f 
+INFO-FLOW: Finish scheduling cipher_Pipeline_VITIS_LOOP_136_1.
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         bind -model cipher_Pipeline_VITIS_LOOP_136_1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.15 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.45 seconds. CPU system time: 0 seconds. Elapsed time: 0.46 seconds; current allocated memory: 362.887 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.48 sec.
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.bind.adb -f 
+INFO-FLOW: Finish binding cipher_Pipeline_VITIS_LOOP_136_1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         schedule -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_85_1_VITIS_LOOP_86_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'VITIS_LOOP_85_1_VITIS_LOOP_86_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.53 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.54 seconds; current allocated memory: 363.030 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.sched.adb -f 
+INFO-FLOW: Finish scheduling cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         bind -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 363.188 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.bind.adb -f 
+INFO-FLOW: Finish binding cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         schedule -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_77_1_VITIS_LOOP_78_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 363.338 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.sched.adb -f 
+INFO-FLOW: Finish scheduling cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.
+Execute         set_default_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         bind -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 363.506 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.bind.adb -f 
+INFO-FLOW: Finish binding cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cipher' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model cipher 
+Execute         schedule -model cipher 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 363.669 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.11 sec.
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.sched.adb -f 
+INFO-FLOW: Finish scheduling cipher.
+Execute         set_default_model cipher 
+Execute         bind -model cipher 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.16 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 363.863 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.37 sec.
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.bind.adb -f 
+INFO-FLOW: Finish binding cipher.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         schedule -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_170_3_VITIS_LOOP_171_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_170_3_VITIS_LOOP_171_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.41 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 364.010 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.
+Execute         set_default_model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         bind -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 364.179 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.bind.adb -f 
+INFO-FLOW: Finish binding aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_encrypt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_encrypt 
+Execute         schedule -model aes_encrypt 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 364.253 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_encrypt.
+Execute         set_default_model aes_encrypt 
+Execute         bind -model aes_encrypt 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.19 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 364.347 MB.
+Execute         syn_report -verbosereport -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.4 sec.
+Execute         db_write -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.bind.adb -f 
+INFO-FLOW: Finish binding aes_encrypt.
+Execute         get_model_list aes_encrypt -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         rtl_gen_preprocess cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         rtl_gen_preprocess cipher 
+Execute         rtl_gen_preprocess aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         rtl_gen_preprocess aes_encrypt 
+INFO-FLOW: Model list for RTL generation: aes_encrypt_Pipeline_VITIS_LOOP_41_1 aes_encrypt_Pipeline_VITIS_LOOP_47_2 aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 cipher_Pipeline_VITIS_LOOP_136_1 cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 cipher aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 aes_encrypt
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_encrypt_Pipeline_VITIS_LOOP_41_1 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_encrypt_Pipeline_VITIS_LOOP_41_1' pipeline 'VITIS_LOOP_41_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_41_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.42 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.42 seconds; current allocated memory: 364.730 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_41_1 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_41_1 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+Execute         syn_report -csynth -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_41_1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_41_1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.adb 
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_41_1 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_encrypt_Pipeline_VITIS_LOOP_41_1 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_47_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_encrypt_Pipeline_VITIS_LOOP_47_2 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_47_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 365.995 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_47_2 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_47_2 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+Execute         syn_report -csynth -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_47_2_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_47_2_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.13 sec.
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.adb 
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_47_2 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_encrypt_Pipeline_VITIS_LOOP_47_2 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2' pipeline 'VITIS_LOOP_160_1_VITIS_LOOP_161_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 367.748 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+Execute         syn_report -csynth -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.adb 
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2' pipeline 'VITIS_LOOP_77_1_VITIS_LOOP_78_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 368.699 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+Execute         syn_report -csynth -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.adb 
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_136_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model cipher_Pipeline_VITIS_LOOP_136_1 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_136_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 371.234 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_136_1 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_136_1 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1 
+Execute         syn_report -csynth -model cipher_Pipeline_VITIS_LOOP_136_1 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_136_1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.18 sec.
+Execute         syn_report -rtlxml -model cipher_Pipeline_VITIS_LOOP_136_1 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_136_1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model cipher_Pipeline_VITIS_LOOP_136_1 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.57 sec.
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_136_1 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.adb 
+Command         db_write done; 0.11 sec.
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_136_1 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info cipher_Pipeline_VITIS_LOOP_136_1 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2' pipeline 'VITIS_LOOP_85_1_VITIS_LOOP_86_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.05 seconds; current allocated memory: 376.328 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+Execute         syn_report -csynth -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.adb 
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22' pipeline 'VITIS_LOOP_77_1_VITIS_LOOP_78_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 377.333 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         gen_rtl cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+Execute         syn_report -csynth -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.adb 
+Execute         db_write -model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cipher' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model cipher -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cipher'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 378.699 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl cipher -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_cipher 
+Execute         gen_rtl cipher -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_cipher 
+Execute         syn_report -csynth -model cipher -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model cipher -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/cipher_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model cipher -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.38 sec.
+Execute         db_write -model cipher -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.adb 
+Execute         db_write -model cipher -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info cipher -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -top_prefix aes_encrypt_ -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4' pipeline 'VITIS_LOOP_170_3_VITIS_LOOP_171_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.42 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.42 seconds; current allocated memory: 379.858 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         gen_rtl aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+Execute         syn_report -csynth -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.adb 
+Execute         db_write -model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_encrypt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_encrypt -top_prefix  -sub_prefix aes_encrypt_ -mg_file /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes_encrypt/key' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes_encrypt/plaintext' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes_encrypt/ciphertext' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aes_encrypt' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_encrypt'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 381.134 MB.
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_encrypt -istop -style xilinx -f -lang vhdl -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/vhdl/aes_encrypt 
+Execute         gen_rtl aes_encrypt -istop -style xilinx -f -lang vlog -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/verilog/aes_encrypt 
+Execute         syn_report -csynth -model aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/aes_encrypt_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.42 sec.
+Execute         db_write -model aes_encrypt -f -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.adb 
+Execute         db_write -model aes_encrypt -bindview -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_encrypt -p /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt 
+Execute         export_constraint_db -f -tool general -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.constraint.tcl 
+Execute         syn_report -designview -model aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.design.xml 
+Command         syn_report done; 0.39 sec.
+Execute         syn_report -csynthDesign -model aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         get_config_rtl -disable_wave_debug 
+Execute         syn_report -wcfg -model aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model aes_encrypt -o /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.protoinst 
+Execute         get_config_debug -directory 
+Execute         sc_get_clocks aes_encrypt 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         sc_get_portdomain aes_encrypt 
+INFO-FLOW: Model list for RTL component generation: aes_encrypt_Pipeline_VITIS_LOOP_41_1 aes_encrypt_Pipeline_VITIS_LOOP_47_2 aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 cipher_Pipeline_VITIS_LOOP_136_1 cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 cipher aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 aes_encrypt
+INFO-FLOW: Handling components in module [aes_encrypt_Pipeline_VITIS_LOOP_41_1] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [aes_encrypt_Pipeline_VITIS_LOOP_47_2] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2_Rcon.
+INFO-FLOW: Append model aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2_Rcon
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cipher_Pipeline_VITIS_LOOP_136_1] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1_sbox.
+INFO-FLOW: Append model aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1_sbox
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cipher] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.compgen.tcl 
+INFO-FLOW: Handling components in module [aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [aes_encrypt] ... 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.compgen.tcl 
+INFO-FLOW: Found component aes_encrypt_RoundKey.
+INFO-FLOW: Append model aes_encrypt_RoundKey
+INFO-FLOW: Found component aes_encrypt_state.
+INFO-FLOW: Append model aes_encrypt_state
+INFO-FLOW: Append model aes_encrypt_Pipeline_VITIS_LOOP_41_1
+INFO-FLOW: Append model aes_encrypt_Pipeline_VITIS_LOOP_47_2
+INFO-FLOW: Append model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2
+INFO-FLOW: Append model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2
+INFO-FLOW: Append model cipher_Pipeline_VITIS_LOOP_136_1
+INFO-FLOW: Append model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2
+INFO-FLOW: Append model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22
+INFO-FLOW: Append model cipher
+INFO-FLOW: Append model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4
+INFO-FLOW: Append model aes_encrypt
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2_Rcon aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1_sbox aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_flow_control_loop_pipe_sequential_init aes_encrypt_RoundKey aes_encrypt_state aes_encrypt_Pipeline_VITIS_LOOP_41_1 aes_encrypt_Pipeline_VITIS_LOOP_47_2 aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2 cipher_Pipeline_VITIS_LOOP_136_1 cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2 cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22 cipher aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4 aes_encrypt
+INFO-FLOW: Generating /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2_Rcon
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1_sbox
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes_encrypt_RoundKey
+INFO-FLOW: To file: write model aes_encrypt_state
+INFO-FLOW: To file: write model aes_encrypt_Pipeline_VITIS_LOOP_41_1
+INFO-FLOW: To file: write model aes_encrypt_Pipeline_VITIS_LOOP_47_2
+INFO-FLOW: To file: write model aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2
+INFO-FLOW: To file: write model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2
+INFO-FLOW: To file: write model cipher_Pipeline_VITIS_LOOP_136_1
+INFO-FLOW: To file: write model cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2
+INFO-FLOW: To file: write model cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22
+INFO-FLOW: To file: write model cipher
+INFO-FLOW: To file: write model aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4
+INFO-FLOW: To file: write model aes_encrypt
+INFO-FLOW: Generating /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+Execute         get_top 
+Execute         get_config_export -ipname 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/generic/autopilot/common.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/generic/autopilot/op.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/generic/autopilot/interface.gen 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/util.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/Xilinx/Vitis_HLS/2021.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command         ap_source done; 0.11 sec.
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/vhdl' dstVlogDir='/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/vlog' tclDir='/home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db' modelList='aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2_Rcon
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1_sbox
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_RoundKey
+aes_encrypt_state
+aes_encrypt_Pipeline_VITIS_LOOP_41_1
+aes_encrypt_Pipeline_VITIS_LOOP_47_2
+aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2
+cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2
+cipher_Pipeline_VITIS_LOOP_136_1
+cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2
+cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22
+cipher
+aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4
+aes_encrypt
+' expOnly='0'
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.compgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.compgen.tcl 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2_Rcon' using auto ROMs.
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.compgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.compgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.compgen.tcl 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1_sbox' using auto ROMs.
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.compgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.compgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.compgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.compgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'aes_encrypt_RoundKey_ram (RAM)' using auto RAMs.
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'aes_encrypt_state_ram (RAM)' using auto RAMs.
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.24 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.28 seconds; current allocated memory: 383.043 MB.
+INFO-FLOW: DBG:PROC: ::AP::create_csynth_xml outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: No bind nodes found for module_name cipher
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+Execute         get_config_op mul -impl 
+Execute         get_config_op mul -latency 
+Execute         get_config_op mul -precision 
+Execute         get_config_op add -impl 
+Execute         get_config_op add -latency 
+Execute         get_config_op add -precision 
+Execute         get_config_op sub -impl 
+Execute         get_config_op sub -latency 
+Execute         get_config_op sub -precision 
+Execute         get_config_op fadd -impl 
+Execute         get_config_op fadd -latency 
+Execute         get_config_op fadd -precision 
+Execute         get_config_op fsub -impl 
+Execute         get_config_op fsub -latency 
+Execute         get_config_op fsub -precision 
+Execute         get_config_op fdiv -impl 
+Execute         get_config_op fdiv -latency 
+Execute         get_config_op fdiv -precision 
+Execute         get_config_op fexp -impl 
+Execute         get_config_op fexp -latency 
+Execute         get_config_op fexp -precision 
+Execute         get_config_op flog -impl 
+Execute         get_config_op flog -latency 
+Execute         get_config_op flog -precision 
+Execute         get_config_op fmul -impl 
+Execute         get_config_op fmul -latency 
+Execute         get_config_op fmul -precision 
+Execute         get_config_op frsqrt -impl 
+Execute         get_config_op frsqrt -latency 
+Execute         get_config_op frsqrt -precision 
+Execute         get_config_op frecip -impl 
+Execute         get_config_op frecip -latency 
+Execute         get_config_op frecip -precision 
+Execute         get_config_op fsqrt -impl 
+Execute         get_config_op fsqrt -latency 
+Execute         get_config_op fsqrt -precision 
+Execute         get_config_op dadd -impl 
+Execute         get_config_op dadd -latency 
+Execute         get_config_op dadd -precision 
+Execute         get_config_op dsub -impl 
+Execute         get_config_op dsub -latency 
+Execute         get_config_op dsub -precision 
+Execute         get_config_op ddiv -impl 
+Execute         get_config_op ddiv -latency 
+Execute         get_config_op ddiv -precision 
+Execute         get_config_op dexp -impl 
+Execute         get_config_op dexp -latency 
+Execute         get_config_op dexp -precision 
+Execute         get_config_op dlog -impl 
+Execute         get_config_op dlog -latency 
+Execute         get_config_op dlog -precision 
+Execute         get_config_op dmul -impl 
+Execute         get_config_op dmul -latency 
+Execute         get_config_op dmul -precision 
+Execute         get_config_op drsqrt -impl 
+Execute         get_config_op drsqrt -latency 
+Execute         get_config_op drsqrt -precision 
+Execute         get_config_op drecip -impl 
+Execute         get_config_op drecip -latency 
+Execute         get_config_op drecip -precision 
+Execute         get_config_op dsqrt -impl 
+Execute         get_config_op dsqrt -latency 
+Execute         get_config_op dsqrt -precision 
+Execute         get_config_op hadd -impl 
+Execute         get_config_op hadd -latency 
+Execute         get_config_op hadd -precision 
+Execute         get_config_op hsub -impl 
+Execute         get_config_op hsub -latency 
+Execute         get_config_op hsub -precision 
+Execute         get_config_op hdiv -impl 
+Execute         get_config_op hdiv -latency 
+Execute         get_config_op hdiv -precision 
+Execute         get_config_op hmul -impl 
+Execute         get_config_op hmul -latency 
+Execute         get_config_op hmul -precision 
+Execute         get_config_op hsqrt -impl 
+Execute         get_config_op hsqrt -latency 
+Execute         get_config_op hsqrt -precision 
+Execute         get_config_op facc -impl 
+Execute         get_config_op facc -latency 
+Execute         get_config_op facc -precision 
+Execute         get_config_op fmacc -impl 
+Execute         get_config_op fmacc -latency 
+Execute         get_config_op fmacc -precision 
+Execute         get_config_op fmadd -impl 
+Execute         get_config_op fmadd -latency 
+Execute         get_config_op fmadd -precision 
+Execute         get_config_storage fifo -auto_srl_max_bits 
+Execute         get_config_storage fifo -auto_srl_max_depth 
+Execute         get_config_storage fifo -impl 
+Execute         get_solution -flow_target 
+Execute         get_config_array_partition -complete_threshold 
+Execute         get_config_array_partition -throughput_driven 
+Execute         get_config_compile -enable_auto_rewind 
+Execute         get_config_compile -name_max_length 
+Execute         get_config_compile -no_signed_zeros 
+Execute         get_config_compile -pipeline_loops 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pre_tcl 
+Execute         get_config_compile -unsafe_math_optimizations 
+Execute         get_config_dataflow -default_channel 
+Execute         get_config_dataflow -disable_fifo_sizing_opt 
+Execute         get_config_dataflow -fifo_depth 
+Execute         get_config_dataflow -override_user_fifo_depth 
+Execute         get_config_dataflow -scalar_fifo_depth 
+Execute         get_config_dataflow -start_fifo_depth 
+Execute         get_config_dataflow -strict_mode 
+Execute         get_config_dataflow -strict_stable_sync 
+Execute         get_config_dataflow -task_level_fifo_depth 
+Execute         get_config_debug -directory 
+Execute         get_config_debug -enable 
+Execute         get_config_export -description 
+Execute         get_config_export -disable_deadlock_detection 
+Execute         get_config_export -display_name 
+Execute         get_config_export -format 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_export -ipname 
+Execute         get_config_export -library 
+Execute         get_config_export -output 
+Execute         get_config_export -rtl 
+Execute         get_config_export -taxonomy 
+Execute         get_config_export -vendor 
+Execute         get_config_export -version 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_max_timing_paths 
+Execute         get_config_export -vivado_optimization_level 
+Execute         get_config_export -vivado_pblock 
+Execute         get_config_export -vivado_phys_opt 
+Execute         get_config_export -vivado_report_level 
+Execute         get_config_export -vivado_synth_design_args 
+Execute         get_config_export -vivado_synth_strategy 
+Execute         get_config_interface -clock_enable 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_config_interface -m_axi_addr64 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_buffer_impl 
+Execute         get_config_interface -m_axi_conservative_mode 
+Execute         get_config_interface -m_axi_flush_mode 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -register_io 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_interface -s_axilite_mailbox 
+Execute         get_config_interface -s_axilite_status_regs 
+Execute         get_config_interface -s_axilite_sw_reset 
+Execute         get_config_rtl -header 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -mult_keep_attribute 
+Execute         get_config_rtl -register_all_io 
+Execute         get_config_rtl -register_reset_num 
+Execute         get_config_rtl -reset 
+Execute         get_config_rtl -reset_async 
+Execute         get_config_rtl -reset_level 
+Execute         get_config_schedule -enable_dsp_full_reg 
+Execute         get_config_unroll -tripcount_threshold 
+INFO-FLOW: Done: create_csynth_xml config info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:       create_csynth_xml wrote csynth_xml=/home/CryptoHLS/tmp_hls_smoke_debug/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_aes_encrypt_Pipeline_VITIS_LOOP_47_2_Rcon
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_cipher_Pipeline_VITIS_LOOP_136_1_sbox
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_flow_control_loop_pipe_sequential_init
+aes_encrypt_RoundKey
+aes_encrypt_state
+aes_encrypt_Pipeline_VITIS_LOOP_41_1
+aes_encrypt_Pipeline_VITIS_LOOP_47_2
+aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2
+cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2
+cipher_Pipeline_VITIS_LOOP_136_1
+cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2
+cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22
+cipher
+aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4
+aes_encrypt
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/top-io-be.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.rtl_wrap.cfg.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.compgen.dataonly.tcl 
+Execute         get_config_export -format 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_41_1.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_47_2.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_136_1.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/cipher.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt_Pipeline_VITIS_LOOP_170_3_VITIS_LOOP_171_4.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.tbgen.tcl 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         get_solution -flow_target 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -stall_sig_gen 
+Execute         get_config_rtl -profile 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/aes_encrypt.constraint.tcl 
+Execute         sc_get_clocks aes_encrypt 
+Execute         source /home/CryptoHLS/tmp_hls_smoke_debug/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_debug -directory 
+INFO-FLOW: DBG:PROC: ::AP::add_csynth_report_sections
+INFO-FLOW: DBG:PUTS:       update_csynth_reports json2reportxml
+INFO-FLOW: DBG:PUTS:       update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:       update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.39 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.4 seconds; current allocated memory: 386.893 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for aes_encrypt.
+INFO: [VLOG 209-307] Generating Verilog RTL for aes_encrypt.
+Execute         syn_report -model aes_encrypt -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 449.44 MHz
+Command       autosyn done; 10.8 sec.
+Command     csynth_design done; 17.45 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 17.07 seconds. CPU system time: 1.32 seconds. Elapsed time: 17.45 seconds; current allocated memory: 386.883 MB.
+Execute     cleanup_all 

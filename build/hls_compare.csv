@@ -1,0 +1,14 @@
+metric,baseline,optimized,delta
+Latency min,,,
+Latency max,,,
+Latency avg,,,
+Interval min,,,
+Interval max,,,
+Interval avg,,,
+LUT,3656.0,3656.0,0.0
+FF,651.0,651.0,0.0
+BRAM_18K,0.0,0.0,0.0
+URAM,0.0,0.0,0.0
+DSP,0.0,0.0,0.0
+Target Period (ns),,,
+Estimated Clock Period (ns),,,

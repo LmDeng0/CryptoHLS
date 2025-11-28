@@ -1,0 +1,105 @@
+
+
+================================================================
+== Synthesis Summary Report of 'aes_encrypt'
+================================================================
++ General Information: 
+    * Date:           Fri Aug 29 16:37:54 2025
+    * Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:07 MDT 2021)
+    * Project:        hls_eval
+    * Solution:       sol1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu9p-flga2104-2L-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |                               Modules                               | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |           |            |     |
+    |                               & Loops                               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |     LUT    | URAM|
+    +---------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |+ aes_encrypt                                                        |     -|  5.07|      531|  5.310e+03|         -|      532|     -|        no|     -|   -|  651 (~0%)|  3656 (~0%)|    -|
+    | + grp_aes_encrypt_Pipeline_VITIS_LOOP_41_1_fu_46                    |     -|  6.01|       10|    100.000|         -|       10|     -|        no|     -|   -|   19 (~0%)|   157 (~0%)|    -|
+    |  o VITIS_LOOP_41_1                                                  |    II|  7.30|        8|     80.000|         3|        2|     4|       yes|     -|   -|          -|           -|    -|
+    | + grp_aes_encrypt_Pipeline_VITIS_LOOP_160_1_VITIS_LOOP_161_2_fu_54  |     -|  5.07|       18|    180.000|         -|       18|     -|        no|     -|   -|   18 (~0%)|   155 (~0%)|    -|
+    |  o VITIS_LOOP_160_1_VITIS_LOOP_161_2                                |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|     -|   -|          -|           -|    -|
+    | + grp_aes_encrypt_Pipeline_VITIS_LOOP_47_2_fu_62                    |     -|  5.74|      242|  2.420e+03|         -|      242|     -|        no|     -|   -|  112 (~0%)|   415 (~0%)|    -|
+    |  o VITIS_LOOP_47_2                                                  |    II|  7.30|      240|  2.400e+03|         6|        6|    40|       yes|     -|   -|          -|           -|    -|
+    | + grp_cipher_fu_71                                                  |     -|  5.07|      246|  2.460e+03|         -|      246|     -|        no|     -|   -|  447 (~0%)|  2403 (~0%)|    -|
+    |  + grp_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_2_fu_159       |     -|  5.07|       18|    180.000|         -|       18|     -|        no|     -|   -|   18 (~0%)|   151 (~0%)|    -|
+    |   o VITIS_LOOP_77_1_VITIS_LOOP_78_2                                 |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|     -|   -|          -|           -|    -|
+    |  + grp_cipher_Pipeline_VITIS_LOOP_136_1_fu_167                      |     -|  5.26|      173|  1.730e+03|         -|      173|     -|        no|     -|   -|  292 (~0%)|  1436 (~0%)|    -|
+    |   o VITIS_LOOP_136_1                                                |    II|  7.30|      171|  1.710e+03|        19|       19|     9|       yes|     -|   -|          -|           -|    -|
+    |  + grp_cipher_Pipeline_VITIS_LOOP_85_1_VITIS_LOOP_86_2_fu_177       |     -|  5.07|       19|    190.000|         -|       19|     -|        no|     -|   -|   32 (~0%)|   176 (~0%)|    -|
+    |   o VITIS_LOOP_85_1_VITIS_LOOP_86_2                                 |     -|  7.30|       17|    170.000|         3|        1|    16|       yes|     -|   -|          -|           -|    -|
+    |  + grp_cipher_Pipeline_VITIS_LOOP_77_1_VITIS_LOOP_78_22_fu_185      |     -|  5.07|       18|    180.000|         -|       18|     -|        no|     -|   -|   18 (~0%)|   166 (~0%)|    -|
+    |   o VITIS_LOOP_77_1_VITIS_LOOP_78_2                                 |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|     -|   -|          -|           -|    -|
+    | + grp_aes_encrypt_Pipeline_VITIS_LOOP_171_3_VITIS_LOOP_172_4_fu_79  |     -|  5.07|       18|    180.000|         -|       18|     -|        no|     -|   -|   18 (~0%)|   155 (~0%)|    -|
+    |  o VITIS_LOOP_171_3_VITIS_LOOP_172_4                                |     -|  7.30|       16|    160.000|         2|        1|    16|       yes|     -|   -|          -|           -|    -|
+    +---------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++---------------------+----------+
+| Interface           | Bitwidth |
++---------------------+----------+
+| ciphertext_address0 | 4        |
+| ciphertext_d0       | 8        |
+| key_address0        | 4        |
+| key_address1        | 4        |
+| key_q0              | 8        |
+| key_q1              | 8        |
+| plaintext_address0  | 4        |
+| plaintext_q0        | 8        |
++---------------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------+-----------+----------------+
+| Argument   | Direction | Datatype       |
++------------+-----------+----------------+
+| key        | in        | unsigned char* |
+| plaintext  | in        | unsigned char* |
+| ciphertext | out       | unsigned char* |
++------------+-----------+----------------+
+
+* SW-to-HW Mapping
++------------+---------------------+---------+----------+
+| Argument   | HW Name             | HW Type | HW Usage |
++------------+---------------------+---------+----------+
+| key        | key_address0        | port    | offset   |
+| key        | key_ce0             | port    |          |
+| key        | key_q0              | port    |          |
+| key        | key_address1        | port    | offset   |
+| key        | key_ce1             | port    |          |
+| key        | key_q1              | port    |          |
+| plaintext  | plaintext_address0  | port    | offset   |
+| plaintext  | plaintext_ce0       | port    |          |
+| plaintext  | plaintext_q0        | port    |          |
+| ciphertext | ciphertext_address0 | port    | offset   |
+| ciphertext | ciphertext_ce0      | port    |          |
+| ciphertext | ciphertext_we0      | port    |          |
+| ciphertext | ciphertext_d0       | port    |          |
++------------+---------------------+---------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+

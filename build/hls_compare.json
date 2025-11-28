@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "LUT": 3656.0,
+    "FF": 651.0,
+    "BRAM_18K": 0.0,
+    "URAM": 0.0,
+    "DSP": 0.0,
+    "__report_path": "build/hls_compare_out/hls_eval_baseline/hls_eval/sol1/syn/report/aes_encrypt_csynth.rpt",
+    "__work_dir": "build/hls_compare_out/hls_eval_baseline"
+  },
+  "optimized": {
+    "LUT": 3656.0,
+    "FF": 651.0,
+    "BRAM_18K": 0.0,
+    "URAM": 0.0,
+    "DSP": 0.0,
+    "__report_path": "build/hls_compare_out/hls_eval_optimized/hls_eval/sol1/syn/report/aes_encrypt_csynth.rpt",
+    "__work_dir": "build/hls_compare_out/hls_eval_optimized"
+  }
+}
