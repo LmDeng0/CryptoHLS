@@ -157,9 +157,10 @@ void aes_encrypt(uint8_t key[16], uint8_t plaintext[16], uint8_t ciphertext[16])
     KeyExpansion(RoundKey, key);
 
     // 2. 将输入明文复制到内部状态矩阵
-        #pragma HLS UNROLL factor=4
+        #pragma HLS PIPELINE II=1
 for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 4; ++j) {
+                #pragma HLS PIPELINE II=1
+for (int j = 0; j < 4; ++j) {
             state[j][i] = plaintext[i * 4 + j];
         }
     }
@@ -168,8 +169,11 @@ for (int i = 0; i < 4; ++i) {
     cipher(&state, RoundKey);
 
     // 4. 将加密后的状态矩阵复制到输出
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 4; ++j) {
+        #pragma HLS PIPELINE II=4
+    #pragma HLS PIPELINE II=2
+for (int i = 0; i < 4; ++i) {
+                #pragma HLS PIPELINE II=2
+for (int j = 0; j < 4; ++j) {
             ciphertext[i * 4 + j] = state[j][i];
         }
     }

@@ -26,7 +26,7 @@ VOCAB_SIZES = {k: len(v) for k, v in PRAGMA_COMPONENTS.items()}
 
 # ----------------- 损失函数：加权 Huber，用于 (latency, interval, LUT) 多任务 -----------------
 class WeightedHuberLoss(nn.Module):
-    def __init__(self, delta: float = 1.0, weights=(1.0, 1.0, 1.5)):
+    def __init__(self, delta=1.0, weights=(1.0, 0.0, 1.0)):
         """
         delta: Huber 损失阈值
         weights: 对 (latency, interval, LUT) 的维度权重
@@ -239,7 +239,7 @@ def evaluate(model: nn.Module,
     mape_latency  = float(np.mean(np.abs(p[:, 0] - y_raw[:, 0]) / (np.abs(y_raw[:, 0]) + eps)) * 100.0)
     mape_interval = float(np.mean(np.abs(p[:, 1] - y_raw[:, 1]) / (np.abs(y_raw[:, 1]) + eps)) * 100.0)
     mape_lut      = float(np.mean(np.abs(p[:, 2] - y_raw[:, 2]) / (np.abs(y_raw[:, 2]) + eps)) * 100.0)
-    mape_mean     = float((mape_latency + mape_interval + mape_lut) / 3.0)
+    mape_mean     = float((mape_latency + mape_interval + mape_lut) / 2.0)
 
     # 可选：把预测写到 CSV
     if out_csv:
@@ -335,7 +335,7 @@ def main():
         return 0.5 * (1 + math.cos(math.pi * min(1.0, t)))
 
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
-    loss_fn = WeightedHuberLoss(delta=1.0, weights=(1.0, 1.0, 1.5))
+    loss_fn = WeightedHuberLoss(delta=1.0, weights=(1.0, 0.0, 1.0))
 
     def train_one_epoch(epoch: int) -> float:
         model.train()
